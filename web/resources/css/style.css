@@ -1,14 +1,3 @@
-/*
-Template Name: SinglePro - Multipurpose Bootstrap HTML5/CSS3 One Page Template
-Template URI:
-Author: WpFreeware
-Author URI: 
-Description: SinglePro - Multipurpose Bootstrap HTML5/CSS3 One Page Template.
-Version: 2.0
-Tags: light, white, landing page,single page,Multipurpose,custom-colors,Bootstrap,responsive, html5, css3
-*/
-
-
 /* Table of Content
 ==================================================
         #BASIC TYPOGRAPHY
@@ -589,7 +578,7 @@ img{
     width: 100%;
     min-height: 350px;
     padding: 85px 0px;
-    background-image: url(../img/skills_bg.jpg);
+    background-image: url(../img/skill.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: relative;
