@@ -1,8 +1,4 @@
 /**	
- * SinglePro HTML 2.0	
- * Template Scripts
- * Created by WpFreeware Team
- 
  Custom JS
  
  1. Superslides Slider

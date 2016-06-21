@@ -76,7 +76,7 @@
                     <!-- START ABOUT HEADING -->
                     <div class="heading">
                         <h2 class="wow fadeInLeftBig">About Us</h2>
-                        <p>Rahul please give us some content...</p>
+                        <p>Rahul Ahasan Photography is a leading full service photography/production company specializing in creating amazing work for our client. We are based in Bangladesh, but available for destinations everywhere. An appreciation of photography & honest storytelling is essential to our clients & we are so grateful you have found yourself here. Our quality is far better than others and we always ensure our service quality to our clients. We are available to provide unique wedding Invitation card for your event. </p>
                     </div>
 
                     <!-- START ABOUT CONTENT -->
@@ -90,13 +90,13 @@
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">
                                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                                        <span class="fa fa-check-square-o"></span>Creative & clean Design
+                                                        <span class="fa fa-check-square-o"></span>Covering a wide area
                                                     </a>
                                                 </h4>
                                             </div>
                                             <div id="collapseOne" class="panel-collapse collapse in">
                                                 <div class="panel-body">
-                                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). 
+                                                    We are based in Bangladesh, but available for destinations everywhere. An appreciation of photography & honest storytelling is essential to our clients & we are so grateful you have found yourself here. We are available to provide unique wedding Invitation card for your event.
                                                 </div>
                                             </div>
                                         </div>
@@ -105,43 +105,13 @@
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">
                                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                                        <span class="fa fa-check-square-o"></span>100% responsive layout
+                                                        <span class="fa fa-check-square-o"></span>100% sharp editing
                                                     </a>
                                                 </h4>
                                             </div>
                                             <div id="collapseTwo" class="panel-collapse collapse">
                                                 <div class="panel-body">
-                                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- START SINGLE FEATURED ITEAM #3 -->
-                                        <div class="panel panel-default wow fadeInLeft">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                                        <span class="fa fa-check-square-o"></span>Detail Documentation
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapseThree" class="panel-collapse collapse">
-                                                <div class="panel-body">
-                                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- START SINGLE FEATURED ITEAM #4 -->
-                                        <div class="panel panel-default wow fadeInLeft">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                                        <span class="fa fa-check-square-o"></span>24Hours Premium Support
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapseFour" class="panel-collapse collapse">
-                                                <div class="panel-body">
-                                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages. 
+                                                    Editing and Color Grading all under one name Rahul Ahasan Photography. We are a full service production company specializing in creating amazing work for our client.
                                                 </div>
                                             </div>
                                         </div>
@@ -522,8 +492,8 @@
         <div class="row col-lg-12 col-md-12">
             <!-- START ABOUT HEADING -->
             <div class="heading">
-                <h2 class="wow fadeInLeftBig">Our Pricing</h2>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+                <h2 class="wow fadeInLeftBig">Our Packages</h2>
+                <p>We are providing different type of packages according to your need. Relatively small event causes small or light packages and big or huge event causes big or heavy weight packages. It's your freedom to choose from these packages. We equally concentrate for all packages so you are always free to choose from this packages.</p>
             </div>
         </div>
         <div class="row col-lg-12 col-md-12">
@@ -617,270 +587,6 @@
 <!--=========== END PRICING SECTION ================-->
 
 
-<!--=========== BEGAIN BLOG SECTION ================-->
-<section id="blog">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <!-- START BLOG HEADING -->
-                <div class="heading">
-                    <h2 class="wow fadeInLeftBig">Latest News From Blog</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
-                </div>
-            </div>
-            <div class="col-lg-12 col-md-12">
-                <!-- BEGAIN BLOG CONTENT -->
-                <div class="blog_content">
-
-                    <!-- BEGAIN BLOG SLIDER -->
-                    <div class="blog_slider">
-                        <!-- BEGAIN SINGLE BLOG -->
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="single_post wow fadeInUp">
-                                <div class="blog_img">
-                                    <img src="img/blog_img1.jpg" alt="img">
-                                </div>
-                                <h3>Sed ut perspiciatis unde omnis</h3>
-                                <div class="post_commentbox">
-                                    <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
-                                    <span><i class="fa fa-calendar"></i>6:49 AM</span>
-                                    <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                                </div>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-                                <a href="blog-single.html" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>                   
-                            </div>
-                        </div>
-
-                        <!-- BEGAIN SINGLE BLOG -->
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="single_post wow fadeInUp">
-                                <div class="blog_img">
-                                    <img src="img/blog_img2.jpg" alt="img">
-                                </div>
-                                <h3>Sed ut perspiciatis unde omnis</h3>
-                                <div class="post_commentbox">
-                                    <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
-                                    <span><i class="fa fa-calendar"></i>6:49 AM</span>
-                                    <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                                </div>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-                                <a href="blog-single.html" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-                            </div>
-                        </div>
-                        <!-- BEGAIN SINGLE BLOG -->
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="single_post wow fadeInUp">
-                                <div class="blog_img">
-                                    <img src="img/blog_img3.jpg" alt="img">
-                                </div>
-                                <h3>Sed ut perspiciatis unde omnis</h3>
-                                <div class="post_commentbox">
-                                    <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
-                                    <span><i class="fa fa-calendar"></i>6:49 AM</span>
-                                    <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                                </div>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-                                <a href="blog-single.html" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-                            </div>
-                        </div>
-                        <!-- BEGAIN SINGLE BLOG -->
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="single_post wow fadeInUp">
-                                <div class="blog_img">
-                                    <img src="img/blog_img4.jpg" alt="img">
-                                </div>
-                                <h3>Sed ut perspiciatis unde omnis</h3>
-                                <div class="post_commentbox">
-                                    <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
-                                    <span><i class="fa fa-calendar"></i>6:49 AM</span>
-                                    <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                                </div>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-                                <a href="blog-single.html" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-                            </div>
-                        </div>
-                        <!-- BEGAIN SINGLE BLOG -->
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="single_post wow fadeInUp">
-                                <div class="blog_img">
-                                    <img src="img/blog_img1.jpg" alt="img">
-                                </div>
-                                <h3>Sed ut perspiciatis unde omnis</h3>
-                                <div class="post_commentbox">
-                                    <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
-                                    <span><i class="fa fa-calendar"></i>6:49 AM</span>
-                                    <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                                </div>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-                                <a href="blog-single.html" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-                            </div>
-                        </div>
-                        <!-- BEGAIN SINGLE BLOG -->
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="single_post wow fadeInUp">
-                                <div class="blog_img">
-                                    <img src="img/blog_img2.jpg" alt="img">
-                                </div>
-                                <h3>Sed ut perspiciatis unde omnis</h3>
-                                <div class="post_commentbox">
-                                    <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
-                                    <span><i class="fa fa-calendar"></i>6:49 AM</span>
-                                    <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                                </div>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-                                <a href="blog-single.html" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-                            </div>
-                        </div>                
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--=========== END BLOG SECTION ================-->
-
-
-<!--=========== BEGAIN TESTIMONIAL SECTION ================-->
-<section id="testimonial">
-    <div class="container"> 
-        <div class="row">
-            <div class=" col-lg-7 col-md-7 col-sm-6">
-                <!-- START BLOG HEADING -->
-                <div class="heading">
-                    <h2 class="wow fadeInLeftBig">Satisfied Customers</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
-                </div>
-            </div>
-            <div class=" col-lg-5 col-md-5 col-sm-6">
-                <div class="testimonial_customer">
-                    <!-- BEGAIN TESTIMONIAL SLIDER -->
-                    <ul class="testimonial_slider">
-                        <!-- BEGAIN SINGLE TESTIMONIAL SLIDE#1 -->
-                        <li>
-                            <div class="media testi_media">
-                                <a class="media-left testi_img" href="#">
-                                    <img src="img/team-1.jpg" alt="img">
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Alin Brown</h4>
-                                    <span>CEO</span>                      
-                                </div>
-                            </div>
-                            <div class="testi_content">
-                                <p>Message of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-                            </div>
-                        </li>
-                        <!-- BEGAIN SINGLE TESTIMONIAL SLIDE#2 -->
-                        <li>
-                            <div class="media testi_media">
-                                <a class="media-left testi_img" href="#">
-                                    <img src="img/team-2.jpg" alt="img">
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Jon Smith</h4>
-                                    <span>CEO</span>                      
-                                </div>
-                            </div>
-                            <div class="testi_content">
-                                <p>Message of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-                            </div>
-                        </li>
-                        <!-- BEGAIN SINGLE TESTIMONIAL SLIDE#3 -->
-                        <li>
-                            <div class="media testi_media">
-                                <a class="media-left testi_img" href="#">
-                                    <img src="img/team-4.jpg" alt="img">
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Jon Doe</h4>
-                                    <span>Manager</span>                      
-                                </div>
-                            </div>
-                            <div class="testi_content">
-                                <p>Message of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>           
-        </div>
-    </div>
-</section>
-<!--=========== END TESTIMONIAL SECTION ================-->
-
-
-<!--=========== BEGAIN CLIENTS SECTION ================-->
-<section id="clients">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <!-- START BLOG HEADING -->
-                <div class="heading">
-                    <h2 class="wow fadeInLeftBig">Our Best Clients</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
-                </div>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="clients_content">
-                    <div class="row">
-                        <!-- BEGAIN CLIENTS SLIDER -->
-                        <div class="clients_slider">
-                            <!-- BEGAIN SINGLE CLIENT SLIDE#1 -->
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="single_client">
-                                    <img src="img/clients_img1.png" alt="clients Brand">
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE CLIENT SLIDE#2 -->
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="single_client">
-                                    <img src="img/clients_img2.png" alt="clients Brand">
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE CLIENT SLIDE#3 -->
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="single_client">
-                                    <img src="img/clients_img4.png" alt="clients Brand">
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE CLIENT SLIDE#4 -->
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="single_client">
-                                    <img src="img/clients_img3.png" alt="clients Brand">
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE CLIENT SLIDE#5 -->
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="single_client">
-                                    <img src="img/clients_img4.png" alt="clients Brand">
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE CLIENT SLIDE#6 -->
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="single_client">
-                                    <img src="img/clients_img5.png" alt="clients Brand">
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE CLIENT SLIDE#7 -->
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="single_client">
-                                    <img src="img/clients_img1.png" alt="clients Brand">
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE CLIENT SLIDE#8 -->
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="single_client">
-                                    <img src="img/clients_img2.png" alt="clients Brand">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--=========== END CLIENTS SECTION ================-->
 
 <!--=========== BEGAIN CONTACT SECTION ================-->
 <section id="contact">
@@ -890,7 +596,7 @@
                 <!-- START CONTACT HEADING -->
                 <div class="heading">
                     <h2 class="wow fadeInLeftBig">Contact Us</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                    <p>You are always welcome to contact us. You can ask anything if you want. You will get instant feedback if you drop any message or any query. Feel free to ask us, query us or give us your valuable advise.</p>
                 </div>
             </div>
         </div>       
@@ -913,13 +619,6 @@
                         </form>
                     </div>
                 </div>
-                <!-- BEGAIN CONTACT MAP -->
-                <div class="col-lg-7 col-md-7 col-sm-7">
-                    <div class="contact_map">
-                        <!-- BEGAIN GOOGLE MAP -->
-                        <div id="map_canvas"></div>
-                    </div>
-                </div>           
             </div>
         </div>      
     </div>             
@@ -935,35 +634,27 @@
             <div class="container">               
                 <div class="contact_feature">
                     <!-- BEGAIN CALL US FEATURE -->
-                    <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-lg-offset-1 col-md-offset-1">
                         <div class="single_contact_feaured wow fadeInUp">
                             <i class="fa fa-phone"></i>
                             <h4>Call Us</h4>
-                            <p>1-265-596-580</p>                
+                            <p> +88 01831076800 <br/> +88 01684828812 </p>                
                         </div>
                     </div>
                     <!-- BEGAIN CALL US FEATURE -->
-                    <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-lg-offset-1 col-md-offset-1">
                         <div class="single_contact_feaured wow fadeInUp">
                             <i class="fa fa-envelope-o"></i>
                             <h4>Email Address</h4>
-                            <p>singlepro@gmail.com</p>
+                            <p> info@rahulahasanphotography.com </p>
                         </div>
                     </div>
                     <!-- BEGAIN CALL US FEATURE -->
-                    <div class="col-lg-3 col-md-3 col-sm-6">
-                        <div class="single_contact_feaured wow fadeInUp">
-                            <i class="fa fa-map-marker"></i>
-                            <h4>Office Location</h4>
-                            <p>Your Company Office Location</p>
-                        </div>
-                    </div>
-                    <!-- BEGAIN CALL US FEATURE -->
-                    <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-lg-offset-1 col-md-offset-1">
                         <div class="single_contact_feaured wow fadeInUp">
                             <i class="fa fa-clock-o"></i>
                             <h4>Working Hours</h4>
-                            <p>Monday-Friday 9.00-21.00</p>
+                            <p> 8 AM to 12 PM </p>
                         </div>
                     </div>
                 </div>
@@ -973,17 +664,17 @@
 </section>
 <!--=========== END CONTACT FEATURE SECTION ================-->
 
-<!--=========== BEGAIN SUBSCRIBE SECTION ================-->
+<!--=========== BEGAIN SUBSCRIBE SECTION ================
 <section id="subscribe">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12">
-                <!-- START SUBSCRIBE HEADING -->
+                 START SUBSCRIBE HEADING 
                 <div class="heading">
                     <h2 class="wow fadeInLeftBig">Subscribe Us</h2>
                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
                 </div>
-                <!-- BEGAIN SUBSCRIVE FORM -->
+                 BEGAIN SUBSCRIVE FORM 
                 <form class="subscribe_form">
                     <div class="subscrive_group wow fadeInUp">
                         <input class="form-control subscribe_mail" type="email" placeholder="Enter your email address">
@@ -994,4 +685,4 @@
         </div>
     </div>
 </section>
-<!--=========== END SUBSCRIBE SECTION ================-->
+=========== END SUBSCRIBE SECTION ================-->

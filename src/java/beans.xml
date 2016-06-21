@@ -13,12 +13,12 @@
        
        
        
-<!--    <bean id="hibernate" class="com.studevs.utils.persistent.Hibernate">
-        <constructor-arg ref="sessionFactoryProvider" />
+    <bean id="hibernate" class="com.studevs.falgun.frameworks.persistence.Hibernate">
+        <constructor-arg ref="sessionFactoryProviderImplementation" />
     </bean>
        
-    <bean class="com.studevs.utils.providers.SessionFactoryProvider" id="sessionFactoryProvider" scope="singleton">
-    </bean>-->
+    <bean id="sessionFactoryProviderImplementation" class="com.studevs.utils.providers.SessionFactoryProviderImplementation" scope="singleton">
+    </bean>
     
     
     <!--       <bean id="" class="">
