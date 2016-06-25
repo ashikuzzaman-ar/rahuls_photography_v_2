@@ -1,72 +1,3 @@
-<!-- BEGIN SLIDER AREA-->
-<div class="slider_area">
-    <!-- BEGIN SLIDER-->          
-    <div id="slides">
-        <ul class="slides-container">
-
-            <!-- THE FIRST SLIDE-->
-            <li>
-                <!-- FIRST SLIDE OVERLAY -->
-                <div class="slider_overlay"></div> 
-                <!-- FIRST SLIDE MAIN IMAGE -->
-                <img src="img/full-slider/full-slide7.jpg" alt="img">
-                <!-- FIRST SLIDE CAPTION-->
-                <div class="slider_caption">
-                    <h2>Welcome to our Studio</h2>
-                    <h2>It's nice to meet you!</h2>
-                    <!--<a href="#" class="slider_btn">Who We are</a>-->              
-                </div>
-            </li>
-
-            <!-- THE SECOND SLIDE-->
-            <li>
-                <!-- SECOND SLIDE OVERLAY -->
-                <div class="slider_overlay"></div> 
-                <!-- SECOND SLIDE MAIN IMAGE -->
-                <img src="img/full-slider/full-slide2.jpg" alt="img">
-                <!-- SECOND SLIDE CAPTION-->
-                <div class="slider_caption">
-                    <h2>Hi,We are Ultramodern cinematography</h2>
-                    <p>we are a group of experienced cinematographers and designers</p>
-                    <!--<a href="#" class="slider_btn">Who We are</a>-->
-                </div>
-            </li>
-
-            <!-- THE THIRD SLIDE-->
-            <li>
-                <!-- THIRD SLIDE OVERLAY -->
-                <div class="slider_overlay"></div> 
-                <!-- THIRD SLIDE MAIN IMAGE -->
-                <img src="img/full-slider/full-slide1.jpg" alt="img">
-                <!-- THIRD SLIDE CAPTION-->
-                <div class="slider_caption">
-                    <h2>we'll change your Idea of Photography</h2>
-                    <p>we are a group of experienced photographers and editors</p>
-                    <!--<a href="#" class="slider_btn">Who We are</a>-->                 
-                </div>
-            </li>
-        </ul>
-        <!-- BEGAIN SLIDER NAVIGATION -->
-        <nav class="slides-navigation">
-            <!-- PREV IN THE SLIDE -->
-            <a class="prev" href="/item1">
-                <span class="icon-wrap"></span>
-                <h3><strong>Prev</strong></h3>
-            </a>
-            <!-- NEXT IN THE SLIDE -->
-            <a class="next" href="/item3">
-                <span class="icon-wrap"></span>
-                <h3><strong>Next</strong></h3>
-            </a>
-        </nav>       
-    </div>
-    <!-- END SLIDER-->          
-</div>
-<!-- END SLIDER AREA -->
-</header>
-<!--=========== End HEADER SECTION ================--> 
-
-
 <!--=========== BEGIN ABOUT SECTION ================-->
 <section id="about">
     <div class="container">
@@ -316,33 +247,6 @@
         </div>
     </div>
     <!-- END MILESTONE WORSK SECTION -->
-
-    <!-- BEGAIN FORTFOLIO WORSK SECTION -->
-    <div class="row">
-        <div class="portfolio_area">
-            <!-- BEGAIN PORTFOLIO HEADER -->
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="container">
-                        <div class="heading">
-                            <h2 class="wow fadeInLeftBig">Latest Works</h2>
-                            <p>There have many sample works done by us. Here is a small parts of our working sample or demo. You can visit full gallery to see more of our astonishing works.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END PORTFOLIO HEADER -->
-
-            <!-- BEGAIN PORTFOLIO GALLERY -->
-            <div class="row">
-                <div class="portfolio_gallery">
-                    <div id="elastic_grid_demo"></div>
-                </div>
-            </div>
-            <!-- END PORTFOLIO GALLERY -->
-        </div>         
-    </div>      
-    <!-- END FORTFOLIO WORSK SECTION -->
 </section>
 <!--=========== END WORKS SECTION ================-->
 
@@ -500,14 +404,20 @@
             <div class="pricing_area">
                 <div class="row">
                     <!-- BEGAIN BASIC PRICE TABLE -->
+                    <!--Only one div inside a loop-->
+                    <!--href=myurlWithId-->
                     <div class="col-lg-3 col-md-3 col-sm-3">
                         <div class="single_price wow fadeInUp">
                             <h3>Basic</h3>
                             <div class="price">
+                                <!--                                this part will contain the price from
+                                                                package model-->
                                 <h4>$25</h4>
                                 <span>per month</span>
                             </div>
                             <ul class="price_features">
+                                <!--                                this part will contain the features 
+                                                                from package model-->
                                 <li>Responsive <strong>Layout</strong></li>                  
                                 <li><strong>Customizable</strong> Feature</li>
                                 <li>Up to <strong>5 Projects</strong></li>
@@ -663,26 +573,3 @@
     </div>
 </section>
 <!--=========== END CONTACT FEATURE SECTION ================-->
-
-<!--=========== BEGAIN SUBSCRIBE SECTION ================
-<section id="subscribe">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                 START SUBSCRIBE HEADING 
-                <div class="heading">
-                    <h2 class="wow fadeInLeftBig">Subscribe Us</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
-                </div>
-                 BEGAIN SUBSCRIVE FORM 
-                <form class="subscribe_form">
-                    <div class="subscrive_group wow fadeInUp">
-                        <input class="form-control subscribe_mail" type="email" placeholder="Enter your email address">
-                        <input class="subscr_btn" type="submit" value="Subscribe">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-=========== END SUBSCRIBE SECTION ================-->

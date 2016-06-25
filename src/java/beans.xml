@@ -11,19 +11,83 @@
        http://www.springframework.org/schema/tx 
        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
        
+    
        
-       
-    <bean id="hibernate" class="com.studevs.falgun.frameworks.persistence.Hibernate">
-        <constructor-arg ref="sessionFactoryProviderImplementation" />
-    </bean>
-       
-    <bean id="sessionFactoryProviderImplementation" class="com.studevs.utils.providers.SessionFactoryProviderImplementation" scope="singleton">
+    <!--Service Beans-->
+    <bean class="com.studevs.utils.providers.services.AdminProvider" id="adminProvider"> 
+               
     </bean>
     
     
-    <!--       <bean id="" class="">
-    <property name=""></property>
-    </bean>-->
+    <bean class="com.studevs.utils.providers.services.GalleryImagesProvider" id="galleryImagesProvider" scope="prototype">
+        
+    </bean>
+    
+    
+    <bean class="com.studevs.utils.providers.services.FeaturePageProvider" id="featurePageProvider" scope="prototype">
+        
+    </bean>
+    
+    
+    <!--Model Beans-->
+    <bean class="com.studevs.mvc.models.Admin" id="admin" scope="singleton">
+        
+    </bean>
+    
+    
+    <bean class="com.studevs.mvc.models.GalleryImages" id="galleryImages" scope="prototype">
+    
+    </bean>
+    
+    
+    <bean class="com.studevs.mvc.models.FeaturePage" id="featurePage" scope="singleton">
+        <property name="id">
+            <value>1</value>
+        </property>
+        <property name="startingGifAnimation">
+            <array></array>
+        </property>
+        <property name="coverPhotos">
+            <array>
+                <array>
+                </array>
+            </array>
+        </property>
+        <property name="aboutUsPhotos">
+            <array>
+                <array>
+                </array>
+            </array>
+        </property>
+        <property name="ourSkillsPhoto">
+            <array></array>
+        </property>
+        <property name="someMilestoneWorksPhoto">
+            <array></array>
+        </property>
+        <property name="someMilestoneWorksCounter">
+            <array></array>
+        </property>
+        <property name="ourTeamMembers" ref="ourTeam">
+
+        </property>
+        <property name="ourPackages" ref="ourPackages">
+
+        </property>
+        <property name="contactUsPhoto">
+            <array></array>
+        </property>
+    </bean>
+    
+    
+    <bean class="com.studevs.mvc.models.OurTeam" id="ourTeam" scope="singleton">
+        
+    </bean>
+    
+    
+    <bean class="com.studevs.mvc.models.OurPackages" id="ourPackages" scope="singleton">
+        
+    </bean>
 
 </beans>
 

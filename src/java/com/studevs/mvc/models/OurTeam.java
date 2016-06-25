@@ -3,10 +3,12 @@ package com.studevs.mvc.models;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -23,8 +25,9 @@ public class OurTeam implements Serializable {
     @Column(name = "ID")
     private Integer id;
 
+    @Lob
     @Column(name = "PROFILE_PICTURE")
-    private byte profilePicture[];
+    private byte[] profilePicture;
 
     @Column(name = "NAME")
     private String name;
@@ -36,9 +39,9 @@ public class OurTeam implements Serializable {
     private String message;
 
     @Column(name = "SOCIAL_MEDIA_LINKS")
-    private String socialMediaLinks[];
+    private String[] socialMediaLinks;
     
-    @ManyToOne(targetEntity = FeaturePage.class)
+    @ManyToOne(targetEntity = FeaturePage.class, cascade = CascadeType.ALL)
     private FeaturePage featurePage;
 
     public OurTeam() {

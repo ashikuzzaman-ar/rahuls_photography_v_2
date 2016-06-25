@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 /**
@@ -15,24 +16,29 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "GALLERY_IMAGES")
-public class GalleryImages implements Serializable{
-    
+public class GalleryImages implements Serializable {
+
     @Id
     @GeneratedValue
     @Column(name = "ID")
-    private Long id ;
-    
+    private Long id;
+
+    @Lob
     @Column(name = "IMAGE")
-    private byte image[];
-    
+    private byte[] image;
+
+    @Column(name = "IMAGE_FORMAT")
+    private String imageFormat ;
+
     @Column(name = "CATEGORY")
-    private String category ;
+    private String category;
 
     @Override
     public int hashCode() {
-        int hash = 7;
+        int hash = 5;
         hash = 29 * hash + Objects.hashCode(this.id);
         hash = 29 * hash + Arrays.hashCode(this.image);
+        hash = 29 * hash + Objects.hashCode(this.imageFormat);
         hash = 29 * hash + Objects.hashCode(this.category);
         return hash;
     }
@@ -49,6 +55,9 @@ public class GalleryImages implements Serializable{
             return false;
         }
         final GalleryImages other = (GalleryImages) obj;
+        if (!Objects.equals(this.imageFormat, other.imageFormat)) {
+            return false;
+        }
         if (!Objects.equals(this.category, other.category)) {
             return false;
         }
@@ -75,6 +84,14 @@ public class GalleryImages implements Serializable{
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    public String getImageFormat() {
+        return imageFormat;
+    }
+
+    public void setImageFormat(String imageFormat) {
+        this.imageFormat = imageFormat;
     }
 
     public String getCategory() {

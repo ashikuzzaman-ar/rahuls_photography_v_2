@@ -11,7 +11,7 @@ $(function () {
                         'title': 'Gallery 1',
                         'description': 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.',
                         'thumbnail': ['img/portfolio/small/2.jpg', 'img/portfolio/small/2.jpg', 'img/portfolio/small/3.jpg', 'img/portfolio/small/4.jpg', 'img/portfolio/small/11.jpg'],
-                        'large': ['img/portfolio/large/1.jpg', 'img/portfolio/large/2.jpg', 'img/portfolio/large/3.jpg', 'img/portfolio/large/4.jpg', 'img/portfolio/large/11.jpg'],
+                        'large': ['img/portfolio/large/2.jpg', 'img/portfolio/large/2.jpg', 'img/portfolio/large/3.jpg', 'img/portfolio/large/4.jpg', 'img/portfolio/large/11.jpg'],
                         'button_list':
                                 [
                                     {'title': 'Demo', 'url': 'http://#'},

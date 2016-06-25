@@ -1,8 +1,9 @@
 package com.studevs.mvc.models;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Arrays;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,24 +17,24 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "OUR_PACKAGES")
-public class OurPackages implements Serializable{
-    
+public class OurPackages implements Serializable {
+
     @Id
     @GeneratedValue
     @Column(name = "ID")
-    private Integer id ;
-    
+    private Integer id;
+
     @Column(name = "PACKAGE_NAME")
-    private String packageName ;
-    
+    private String packageName;
+
     @Column(name = "PACKAGE_PRICE")
-    private Integer packagePrice ;
-    
+    private Integer packagePrice;
+
     @Column(name = "FEATURE_LIST")
-    private List<String> featureList ;
-    
-    @ManyToOne(targetEntity = FeaturePage.class)
-    private FeaturePage featurePage ;
+    private String[] featureList;
+
+    @ManyToOne(targetEntity = FeaturePage.class, cascade = CascadeType.ALL)
+    private FeaturePage featurePage;
 
     public OurPackages() {
     }
@@ -41,11 +42,11 @@ public class OurPackages implements Serializable{
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 79 * hash + Objects.hashCode(this.id);
-        hash = 79 * hash + Objects.hashCode(this.packageName);
-        hash = 79 * hash + Objects.hashCode(this.packagePrice);
-        hash = 79 * hash + Objects.hashCode(this.featureList);
-        hash = 79 * hash + Objects.hashCode(this.featurePage);
+        hash = 97 * hash + Objects.hashCode(this.id);
+        hash = 97 * hash + Objects.hashCode(this.packageName);
+        hash = 97 * hash + Objects.hashCode(this.packagePrice);
+        hash = 97 * hash + Arrays.deepHashCode(this.featureList);
+        hash = 97 * hash + Objects.hashCode(this.featurePage);
         return hash;
     }
 
@@ -70,7 +71,7 @@ public class OurPackages implements Serializable{
         if (!Objects.equals(this.packagePrice, other.packagePrice)) {
             return false;
         }
-        if (!Objects.equals(this.featureList, other.featureList)) {
+        if (!Arrays.deepEquals(this.featureList, other.featureList)) {
             return false;
         }
         return Objects.equals(this.featurePage, other.featurePage);
@@ -100,11 +101,11 @@ public class OurPackages implements Serializable{
         this.packagePrice = packagePrice;
     }
 
-    public List<String> getFeatureList() {
+    public String[] getFeatureList() {
         return featureList;
     }
 
-    public void setFeatureList(List<String> featureList) {
+    public void setFeatureList(String[] featureList) {
         this.featureList = featureList;
     }
 

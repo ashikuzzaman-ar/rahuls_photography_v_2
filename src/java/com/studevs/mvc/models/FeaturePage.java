@@ -4,9 +4,11 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -22,37 +24,47 @@ public class FeaturePage implements Serializable{
     @Column(name = "ID")
     private Integer id;
     
+    @Lob
+    @Column(name = "STARTING_GIF_ANIMATION")
+    private byte[] startingGifAnimation;
+    
+    @Lob
     @Column(name = "COVER_PHOTOS")
-    private byte coverPhotos[][];
+    private byte[][] coverPhotos;
     
+    @Lob
     @Column(name = "ABOUT_US_PHOTOS")
-    private byte aboutUsPhotos[][];
+    private byte[][] aboutUsPhotos;
     
+    @Lob
     @Column(name = "OUR_SKILLs_PHOTO")
-    private byte ourSkillsPhoto[];
+    private byte[] ourSkillsPhoto;
     
+    @Lob
     @Column(name = "SOME_MILESTONE_WORKS_PHOTO")
-    private byte someMilestoneWorksPhoto[];
+    private byte[] someMilestoneWorksPhoto;
     
     @Column(name = "SOME_MILESTONE_WORKS_COUNTER")
-    private Integer someMilestoneWorksCounter[];
+    private Integer[] someMilestoneWorksCounter;
     
-    @OneToMany(targetEntity = OurTeam.class)
+    @OneToMany(targetEntity = OurTeam.class, cascade = CascadeType.ALL, mappedBy = "featurePage")
     private List<OurTeam> ourTeamMembers ;
     
-    @OneToMany(targetEntity = OurPackages.class)
+    @OneToMany(targetEntity = OurPackages.class, cascade = CascadeType.ALL, mappedBy = "featurePage")
     private List<OurPackages> ourPackages ;
     
+    @Lob
     @Column(name = "CONTACT_US_PHOTO")
-    private byte contactUsPhoto[];
+    private byte[] contactUsPhoto;
 
     public FeaturePage() {
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
+        int hash = 7;
         hash = 59 * hash + Objects.hashCode(this.id);
+        hash = 59 * hash + Arrays.hashCode(this.startingGifAnimation);
         hash = 59 * hash + Arrays.deepHashCode(this.coverPhotos);
         hash = 59 * hash + Arrays.deepHashCode(this.aboutUsPhotos);
         hash = 59 * hash + Arrays.hashCode(this.ourSkillsPhoto);
@@ -77,6 +89,9 @@ public class FeaturePage implements Serializable{
         }
         final FeaturePage other = (FeaturePage) obj;
         if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Arrays.equals(this.startingGifAnimation, other.startingGifAnimation)) {
             return false;
         }
         if (!Arrays.deepEquals(this.coverPhotos, other.coverPhotos)) {
@@ -109,6 +124,14 @@ public class FeaturePage implements Serializable{
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public byte[] getStartingGifAnimation() {
+        return startingGifAnimation;
+    }
+
+    public void setStartingGifAnimation(byte[] startingGifAnimation) {
+        this.startingGifAnimation = startingGifAnimation;
     }
 
     public byte[][] getCoverPhotos() {

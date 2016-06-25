@@ -1,6 +1,11 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.studevs.utils.providers.services;
 
-import com.studevs.mvc.models.Admin;
+import com.studevs.mvc.models.GalleryImages;
 import com.studevs.utils.providers.ServiceProvider;
 import java.util.List;
 import org.hibernate.Query;
@@ -11,82 +16,72 @@ import org.hibernate.Transaction;
  *
  * @author ashik
  */
-public class AdminProvider implements ServiceProvider {
-    
-    private Admin admin;
+public class GalleryImagesProvider implements ServiceProvider {
+
+    private GalleryImages galleryImages;
     private Session session;
     private Transaction transaction;
     private Query query;
     private String hql;
     private List resultList = null;
-    
-    public boolean isAdmin(Admin admin) {
-        
-        this.session = sessionFactory.openSession();
-        this.transaction = null;
-        
-        try {
-            
-            this.transaction = this.session.beginTransaction();
-            
-            this.hql = "FROM Admin A WHERE "
-                    + "A.username = :a_username";
-            
-            this.query = this.session.createQuery(this.hql);
-            this.query.setParameter("a_username", admin.getUsername());
-            
-            this.resultList = this.query.list();
-            
-            this.transaction.commit();
-        } catch (Exception e) {
-            
-            if (this.transaction != null) {
-                
-                this.transaction.rollback();
-            }
-        } finally {
-            
-            this.session.close();
-        }
-        
-        if (this.resultList != null && this.resultList.size() > 0) {
-            
-            this.admin = (Admin) this.resultList.get(0);
-            
-            return this.admin.equals(admin);
-        } else {
-            
-            return false;
-        }
-    }
-    
-    public boolean updatePassword(Admin admin) {
-        
+
+    public boolean insertNewImage(GalleryImages galleryImages) {
+
         boolean isOk = false;
-        
+
         this.session = sessionFactory.openSession();
         this.transaction = null;
-        
+
         try {
-            
+
             this.transaction = this.session.beginTransaction();
-            
-            this.session.update(admin);
-            
+
+            this.session.save(galleryImages);
+
             this.transaction.commit();
-            
+
             isOk = true;
         } catch (Exception e) {
-            
+
             if (this.transaction != null) {
-                
+
                 this.transaction.rollback();
             }
         } finally {
-            
+
             this.session.close();
         }
-        
+        return isOk;
+    }
+
+    public boolean deleteImage(Long photoID) {
+
+        boolean isOk = false;
+
+        this.session = sessionFactory.openSession();
+        this.transaction = null;
+        this.galleryImages = (GalleryImages) beanProvider.getBean("galleryImages");
+        this.galleryImages.setId(photoID);
+
+        try {
+
+            this.transaction = this.session.beginTransaction();
+
+            this.session.delete(this.galleryImages);
+
+            this.transaction.commit();
+
+            isOk = true;
+        } catch (Exception e) {
+
+            if (this.transaction != null) {
+
+                this.transaction.rollback();
+            }
+        } finally {
+
+            this.session.close();
+        }
         return isOk;
     }
 }

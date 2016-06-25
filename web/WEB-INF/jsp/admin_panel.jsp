@@ -83,12 +83,53 @@
 
                         <div id="form-messages"></div>
 
-                        <form action="admin_panel_logged_in" enctype="multipart/form-data" method="POST">
-                            Slide-1<input class="form-control" type="file" name="image" >
-                            Slide-2<input class="form-control" type="file" name="image" >
-                            Slide-3<input class="form-control" type="file" name="image" >
-                            Slide-4<input class="form-control" type="file" name="image" >
-                            Slide-5<input class="form-control" type="file" name="image" >
+                        <form action="admin_panel_upload_new_photos" enctype="multipart/form-data" method="POST">
+                            <div class="form-control-static">
+                                Image-1<input class="form-control" type="file" name="image" >
+                                <select class="form-control" name="category">
+                                    <option>Wedding</option>
+                                    <option>Fashion</option>
+                                    <option>Card</option>
+                                    <option>Product</option>
+                                </select>
+                            </div>
+                            <div class="form-control-static">
+                                Image-2<input class="form-control" type="file" name="image" >
+                                <select class="form-control" name="category">
+                                    <option>Wedding</option>
+                                    <option>Fashion</option>
+                                    <option>Card</option>
+                                    <option>Product</option>
+                                </select>
+                            </div>
+                            <div class="form-control-static">
+                                Image-3<input class="form-control" type="file" name="image" >
+                                <select class="form-control" name="category">
+                                    <option>Wedding</option>
+                                    <option>Fashion</option>
+                                    <option>Card</option>
+                                    <option>Product</option>
+                                </select>
+                            </div>
+                            <div class="form-control-static">
+                                Image-4<input class="form-control" type="file" name="image" >
+                                <select class="form-control" name="category">
+                                    <option>Wedding</option>
+                                    <option>Fashion</option>
+                                    <option>Card</option>
+                                    <option>Product</option>
+                                </select>
+                            </div>
+                            <div class="form-control-static">
+                                Image-5<input class="form-control" type="file" name="image" >
+                                <select class="form-control" name="category">
+                                    <option>Wedding</option>
+                                    <option>Fashion</option>
+                                    <option>Card</option>
+                                    <option>Product</option>
+                                </select>
+                            </div>
+
                             <input class="btn btn-lg btn-info" type="reset" value="Reset">  
                             <input class="submit_btn" type="submit" value="Upload">  
                         </form>
@@ -121,10 +162,10 @@
 
                         <div id="form-messages"></div>
 
-                        <form action="admin_panel_logged_in" enctype="multipart/form-data" method="POST">
-                            <input class="form-control" type="number" name="photoID" placeholder="Photo ID">
+                        <form action="admin_panel_delete_photo" enctype="multipart/form-data" method="POST">
+                            <input required="true" class="form-control" type="number" name="photoID" placeholder="Photo ID">
                             <input class="btn btn-lg btn-info" type="reset" value="Reset">
-                            <input class="submit_btn" type="submit" value="Delete Photos">  
+                            <input class="submit_btn" type="submit" value="Delete Photo">  
                         </form>
                     </div>
                 </div>
@@ -133,6 +174,41 @@
     </div>             
 </section>
 <!--Delete Photos End-->
+
+
+
+<!--Starting GIF Update Start-->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <!-- START LOGIN HEADING -->
+                <div class="heading">
+                    <h2 class="wow fadeInLeftBig">Update Starting GIF [Must Be GIF Image]</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="contact_content">
+
+                <div class="col-lg-5 col-md-5 col-sm-5">
+                    <div class="contact_form">
+
+                        <div id="form-messages"></div>
+
+                        <form action="admin_panel_starting_gif_update" enctype="multipart/form-data" method="POST">
+                            Background Image<input class="form-control" type="file" name="image" >
+                            <input class="btn btn-lg btn-info" type="reset" value="Reset">  
+                            <input class="submit_btn" type="submit" value="Update">  
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>             
+</section>
+<!--Starting GIF Update End-->
 
 
 
@@ -156,10 +232,10 @@
 
                         <div id="form-messages"></div>
 
-                        <form action="admin_panel_logged_in" enctype="multipart/form-data" method="POST">
-                            Slide-1<input class="form-control" type="file" name="image1" >
-                            Slide-2<input class="form-control" type="file" name="image2" >
-                            Slide-3<input class="form-control" type="file" name="image3" >
+                        <form action="admin_panel_background_slide_update" enctype="multipart/form-data" method="POST">
+                            Slide-1<input class="form-control" type="file" name="image" >
+                            Slide-2<input class="form-control" type="file" name="image" >
+                            Slide-3<input class="form-control" type="file" name="image" >
                             <input class="btn btn-lg btn-info" type="reset" value="Reset">  
                             <input class="submit_btn" type="submit" value="Update">  
                         </form>
@@ -192,13 +268,12 @@
 
                         <div id="form-messages"></div>
 
-                        <form action="admin_panel_logged_in" enctype="multipart/form-data" method="POST">
-                            Slide-1<input class="form-control" type="file" name="image1" >
-                            Slide-2<input class="form-control" type="file" name="image2" >
-                            Slide-3<input class="form-control" type="file" name="image3" >
-                            Slide-4<input class="form-control" type="file" name="image4" >
-                            Slide-5<input class="form-control" type="file" name="image5" >
-                            Slide-6<input class="form-control" type="file" name="image6" >
+                        <form action="admin_panel_about_us_slides_update" enctype="multipart/form-data" method="POST">
+                            Slide-1<input class="form-control" type="file" name="image" >
+                            Slide-2<input class="form-control" type="file" name="image" >
+                            Slide-3<input class="form-control" type="file" name="image" >
+                            Slide-4<input class="form-control" type="file" name="image" >
+                            Slide-5<input class="form-control" type="file" name="image" >
                             <input class="btn btn-lg btn-info" type="reset" value="Reset">  
                             <input class="submit_btn" type="submit" value="Update">  
                         </form>
@@ -232,8 +307,8 @@
 
                         <div id="form-messages"></div>
 
-                        <form action="admin_panel_logged_in" enctype="multipart/form-data" method="POST">
-                            Background Image<input class="form-control" type="file" name="image1" >
+                        <form action="admin_panel_our_skills_background_update" enctype="multipart/form-data" method="POST">
+                            Background Image<input class="form-control" type="file" name="image" >
                             <input class="btn btn-lg btn-info" type="reset" value="Reset">  
                             <input class="submit_btn" type="submit" value="Update">  
                         </form>
@@ -244,6 +319,45 @@
     </div>             
 </section>
 <!--Our Skills Background Update End-->
+
+
+
+<!--Some Milestone Works Counter Update Start-->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <!-- START LOGIN HEADING -->
+                <div class="heading">
+                    <h2 class="wow fadeInLeftBig">Update Some Milestone Works</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="contact_content">
+
+                <div class="col-lg-5 col-md-5 col-sm-5">
+                    <div class="contact_form">
+
+                        <div id="form-messages"></div>
+
+                        <form action="admin_panel_some_milestone_works_counter_update" method="POST">
+                            Number of Clients<input class="form-control" type="number" name="clients" >
+                            Number of Photos<input class="form-control" type="number" name="photos" >
+                            Number of Events<input class="form-control" type="number" name="events" >
+                            Number of Subscribers<input class="form-control" type="number" name="subscribers" >
+                            <input class="btn btn-lg btn-info" type="reset" value="Reset">  
+                            <input class="submit_btn" type="submit" value="Update">  
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>             
+</section>
+<!--Some Milestone Works Counter Update End-->
+
 
 
 
@@ -267,8 +381,8 @@
 
                         <div id="form-messages"></div>
 
-                        <form action="admin_panel_logged_in" enctype="multipart/form-data" method="POST">
-                            Background Image<input class="form-control" type="file" name="image1" >
+                        <form action="admin_panel_some_milestone_works_backgroud_update" enctype="multipart/form-data" method="POST">
+                            Background Image<input class="form-control" type="file" name="image" >
                             <input class="btn btn-lg btn-info" type="reset" value="Reset">  
                             <input class="submit_btn" type="submit" value="Update">  
                         </form>
@@ -379,8 +493,8 @@
 
                         <div id="form-messages"></div>
 
-                        <form action="admin_panel_logged_in" enctype="multipart/form-data" method="POST">
-                            Background Image<input class="form-control" type="file" name="image1" >
+                        <form action="admin_panel_contacts_background_update" enctype="multipart/form-data" method="POST">
+                            Background Image<input class="form-control" type="file" name="image" >
                             <input class="btn btn-lg btn-info" type="reset" value="Reset">  
                             <input class="submit_btn" type="submit" value="Update">  
                         </form>
