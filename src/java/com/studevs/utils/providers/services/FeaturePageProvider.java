@@ -300,6 +300,44 @@ public class FeaturePageProvider implements ServiceProvider {
         return isOk;
     }
 
+    public boolean updateFeaturePage(FeaturePage featurePage) {
+
+        boolean isOk = false;
+
+        try {
+
+            if (this.getFeaturePage() == null) {
+
+                this.session = sessionFactory.openSession();
+                this.transaction = null;
+                this.transaction = this.session.beginTransaction();
+                this.session.save(featurePage);
+            } else {
+
+                this.session = sessionFactory.openSession();
+                this.transaction = null;
+                this.transaction = this.session.beginTransaction();
+
+                this.session.update(featurePage);
+            }
+
+            this.transaction.commit();
+
+            isOk = true;
+        } catch (Exception e) {
+
+            if (this.transaction != null) {
+
+                this.transaction.rollback();
+            }
+        } finally {
+
+            this.session.close();
+        }
+
+        return isOk;
+    }
+
     public FeaturePage getFeaturePage() {
 
         this.featurePage = null;

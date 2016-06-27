@@ -214,7 +214,6 @@ public class AdminPanel implements ServiceProvider {
             }
         } catch (Exception e) {
 
-            model.addAttribute("er", e.toString());
             request.getSession().setAttribute("admin", null);
             return "admin_panel";
         }
@@ -255,7 +254,6 @@ public class AdminPanel implements ServiceProvider {
             }
         } catch (Exception e) {
 
-            model.addAttribute("er", e.toString());
             request.getSession().setAttribute("admin", null);
             return "admin_panel";
         }
@@ -290,7 +288,6 @@ public class AdminPanel implements ServiceProvider {
             }
         } catch (Exception e) {
 
-            model.addAttribute("er", e.toString());
             request.getSession().setAttribute("admin", null);
             return "admin_panel";
         }
@@ -325,7 +322,6 @@ public class AdminPanel implements ServiceProvider {
             }
         } catch (Exception e) {
 
-            model.addAttribute("er", e.toString());
             request.getSession().setAttribute("admin", null);
             return "admin_panel";
         }
@@ -360,7 +356,6 @@ public class AdminPanel implements ServiceProvider {
             }
         } catch (Exception e) {
 
-            model.addAttribute("er", e.toString());
             request.getSession().setAttribute("admin", null);
             return "admin_panel";
         }
@@ -395,7 +390,6 @@ public class AdminPanel implements ServiceProvider {
             }
         } catch (Exception e) {
 
-            model.addAttribute("er", e.toString());
             request.getSession().setAttribute("admin", null);
             return "admin_panel";
         }
@@ -433,7 +427,6 @@ public class AdminPanel implements ServiceProvider {
             }
         } catch (Exception e) {
 
-            model.addAttribute("er", e.toString());
             request.getSession().setAttribute("admin", null);
             return "admin_panel";
         }

@@ -7,6 +7,7 @@ import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
@@ -18,41 +19,41 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "FEATURE_PAGE")
-public class FeaturePage implements Serializable{
-    
+public class FeaturePage implements Serializable {
+
     @Id
     @Column(name = "ID")
     private Integer id;
-    
+
     @Lob
     @Column(name = "STARTING_GIF_ANIMATION")
     private byte[] startingGifAnimation;
-    
+
     @Lob
     @Column(name = "COVER_PHOTOS")
     private byte[][] coverPhotos;
-    
+
     @Lob
     @Column(name = "ABOUT_US_PHOTOS")
     private byte[][] aboutUsPhotos;
-    
+
     @Lob
     @Column(name = "OUR_SKILLs_PHOTO")
     private byte[] ourSkillsPhoto;
-    
+
     @Lob
     @Column(name = "SOME_MILESTONE_WORKS_PHOTO")
     private byte[] someMilestoneWorksPhoto;
-    
+
     @Column(name = "SOME_MILESTONE_WORKS_COUNTER")
     private Integer[] someMilestoneWorksCounter;
-    
-    @OneToMany(targetEntity = OurTeam.class, cascade = CascadeType.ALL, mappedBy = "featurePage")
-    private List<OurTeam> ourTeamMembers ;
-    
-    @OneToMany(targetEntity = OurPackages.class, cascade = CascadeType.ALL, mappedBy = "featurePage")
-    private List<OurPackages> ourPackages ;
-    
+
+    @OneToMany(targetEntity = OurTeam.class,fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "featurePage")
+    private List<OurTeam> ourTeamMembers;
+
+    @OneToMany(targetEntity = OurPackages.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "featurePage")
+    private List<OurPackages> ourPackages;
+
     @Lob
     @Column(name = "CONTACT_US_PHOTO")
     private byte[] contactUsPhoto;

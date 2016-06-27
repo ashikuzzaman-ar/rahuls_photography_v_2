@@ -12,6 +12,16 @@
        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
        
     
+    
+    
+    
+    <!--Utility Bean-->
+    <bean class="com.studevs.utils.EncodedByteToString" id="encodedByteToString">
+        
+    </bean>
+    
+    
+    
        
     <!--Service Beans-->
     <bean class="com.studevs.utils.providers.services.AdminProvider" id="adminProvider"> 
@@ -25,6 +35,14 @@
     
     
     <bean class="com.studevs.utils.providers.services.FeaturePageProvider" id="featurePageProvider" scope="prototype">
+        
+    </bean>
+    
+    <bean class="com.studevs.utils.providers.services.OurTeamProvider" id="ourTeamProvider" scope="prototype">
+        
+    </bean>
+    
+    <bean class="com.studevs.utils.providers.services.OurPackagesProvider" id="ourPackagesProvider" scope="prototype">
         
     </bean>
     
@@ -80,12 +98,12 @@
     </bean>
     
     
-    <bean class="com.studevs.mvc.models.OurTeam" id="ourTeam" scope="singleton">
+    <bean class="com.studevs.mvc.models.OurTeam" id="ourTeam" scope="prototype">
         
     </bean>
     
     
-    <bean class="com.studevs.mvc.models.OurPackages" id="ourPackages" scope="singleton">
+    <bean class="com.studevs.mvc.models.OurPackages" id="ourPackages" scope="prototype">
         
     </bean>
 

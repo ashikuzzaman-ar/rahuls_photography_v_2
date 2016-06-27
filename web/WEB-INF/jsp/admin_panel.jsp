@@ -417,12 +417,8 @@
 
                         <div id="form-messages"></div>
 
-                        <form action="admin_panel_logged_in" enctype="multipart/form-data" method="POST">
-                            <input class="submit_btn" type="submit" value="Add a team member">
-                            <br/>
-                            <input class="submit_btn" type="submit" value="Update a team member">
-                            <br/>
-                            <input class="submit_btn" type="submit" value="Delete a team member">  
+                        <form action="team_members" method="POST">
+                            <input class="submit_btn" name="button" type="submit" value="Edit team member">
                         </form>
                     </div>
                 </div>
@@ -455,12 +451,8 @@
 
                         <div id="form-messages"></div>
 
-                        <form action="admin_panel_logged_in" enctype="multipart/form-data" method="POST">
-                            <input class="submit_btn" type="submit" value="Add a package">
-                            <br/>
-                            <input class="submit_btn" type="submit" value="Update a package"> 
-                            <br/>
-                            <input class="submit_btn" type="submit" value="Delete a package">  
+                        <form action="packages" method="POST">
+                            <input class="submit_btn" type="submit" value="Edit package">  
                         </form>
                     </div>
                 </div>
