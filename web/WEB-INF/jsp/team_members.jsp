@@ -1,11 +1,6 @@
-<%@page import="com.studevs.utils.EncodedByteToString"%>
-<%@page import="java.util.List"%>
 <%@page import="com.studevs.mvc.models.Admin"%>
-<%@page import="com.studevs.mvc.models.OurTeam"%>
 <%
     Admin admin = (Admin) request.getSession().getAttribute("admin");
-    List<OurTeam> ourTeams = (List) request.getAttribute("ourTeams");
-    EncodedByteToString encodedByteToString = (EncodedByteToString) request.getAttribute("encodedByteToString");
 %>
 
 <%
@@ -30,15 +25,15 @@
                     <!-- BEGAIN TEAM SLIDER -->
                     <div class="team_slider">  
 
-                        <% if (ourTeams.size() == 0) { %>
+                        <% if (featurePage.getOurTeamMembers().size() == 0) { %>
                         <h1>No Team Member Is Present!</h1>
                         <h1>Please Add Team Members From Below</h1>
 
                         <%
 
-                        } else if (ourTeams.size() > 0) {
+                        } else if (featurePage.getOurTeamMembers().size() > 0) {
 
-                            for (OurTeam ourTeam : ourTeams) {
+                            for (OurTeam ourTeam : featurePage.getOurTeamMembers()) {
                         %>
 
                         <!-- BEGAIN SINGLE TEAM SLIDE#1 -->              

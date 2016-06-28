@@ -56,23 +56,23 @@
                                     <div class="featured_slider">
                                         <!-- SINGLE SLIDE IN THE SLIDER -->
                                         <div class="single_iteam">
-                                            <a href="#"> <img src="img/feature_img1.jpg" alt="img"></a>                          
+                                            <a href="#"> <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[0])%>" alt="img"></a>                          
                                         </div>
                                         <!-- SINGLE SLIDE IN THE SLIDER -->
                                         <div class="single_iteam">
-                                            <a href="#"> <img src="img/feature_img2.JPG" alt="img"></a>                          
+                                            <a href="#"> <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[1])%>" alt="img"></a>                          
                                         </div>
                                         <!-- SINGLE SLIDE IN THE SLIDER -->
                                         <div class="single_iteam">
-                                            <a href="#"> <img src="img/feature_img3.jpg" alt="img"></a>                           
+                                            <a href="#"> <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[2])%>" alt="img"></a>                           
                                         </div>
                                         <!-- SINGLE SLIDE IN THE SLIDER -->
                                         <div class="single_iteam">
-                                            <a href="#"> <img src="img/feature_img4.jpg" alt="img"></a>                           
+                                            <a href="#"> <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[3])%>" alt="img"></a>                           
                                         </div>
                                         <!-- SINGLE SLIDE IN THE SLIDER -->
                                         <div class="single_iteam">
-                                            <a href="#"> <img src="img/feature_img5.jpg" alt="img"></a>                           
+                                            <a href="#"> <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[4])%>" alt="img"></a>                           
                                         </div>
                                     </div>
                                     <!-- END FEATURED SLIDER -->
@@ -213,7 +213,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-3">
                             <div class="counter wow fadeInUp">
                                 <i class="fa fa-users fa-2x"></i>
-                                <h2 class="timer count-title" id="count-number" data-to="940" data-speed="1500">400</h2>
+                                <h2 class="timer count-title" id="count-number" data-to="<%= featurePage.getSomeMilestoneWorksCounter()[0]%>" data-speed="1500">400</h2>
                                 <p class="count-text ">Clients</p>
                             </div>
                         </div>
@@ -221,7 +221,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-3">
                             <div class="counter wow fadeInUp">
                                 <i class="fa fa-tasks fa-2x"></i>
-                                <h2 class="timer count-title" id="count-number2" data-to="1750" data-speed="1500">300</h2>
+                                <h2 class="timer count-title" id="count-number2" data-to="<%= featurePage.getSomeMilestoneWorksCounter()[1]%>" data-speed="1500">300</h2>
                                 <p class="count-text ">Photos</p>
                             </div>
                         </div>
@@ -229,7 +229,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-3">                 
                             <div class="counter wow fadeInUp">
                                 <i class="fa fa-coffee fa-2x"></i>
-                                <h2 class="timer count-title" id="count-number3" data-to="300" data-speed="1500">200</h2>
+                                <h2 class="timer count-title" id="count-number3" data-to="<%= featurePage.getSomeMilestoneWorksCounter()[2]%>" data-speed="1500">200</h2>
                                 <p class="count-text ">Events</p>
                             </div>
                         </div>
@@ -237,7 +237,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-3">                 
                             <div class="counter wow fadeInUp">
                                 <i class="fa fa-bullhorn fa-2x"></i>
-                                <h2 class="timer count-title" id="count-number4" data-to="17875" data-speed="1500">100</h2>
+                                <h2 class="timer count-title" id="count-number4" data-to="<%= featurePage.getSomeMilestoneWorksCounter()[3]%>" data-speed="1500">100</h2>
                                 <p class="count-text ">Subscribers</p>
                             </div>
                         </div>
@@ -261,126 +261,28 @@
                 </div>
                 <div class="team_area">
                     <!-- BEGAIN TEAM SLIDER -->
-                    <div class="team_slider">  
-                        <!-- BEGAIN SINGLE TEAM SLIDE#1 -->              
+                    <div class="team_slider"> 
+
+                        <% for (OurTeam ourTeam : featurePage.getOurTeamMembers()) {%>
+
                         <div class="col-lg-3 col-md-3 col-sm-4">
                             <div class="single_team wow fadeInUp">
                                 <div class="team_img">
-                                    <img src="img/team-1.jpg" alt="img">
+                                    <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(ourTeam.getProfilePicture())%>" alt="img">
                                 </div>
-                                <h5 class="">Jamie Sidens</h5>
-                                <span>Founder</span>                        
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
+                                <h5 class=""><%= ourTeam.getName()%></h5>
+                                <span><%= ourTeam.getPosition()%></span>                        
+                                <p><%= ourTeam.getMessage()%></p>
                                 <div class="team_social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="<%= ourTeam.getSocialMediaLinks()[0]%>"><i class="fa fa-facebook"></i></a>
+                                    <a href="<%= ourTeam.getSocialMediaLinks()[1]%>"><i class="fa fa-twitter"></i></a>
+                                    <a href="<%= ourTeam.getSocialMediaLinks()[2]%>"><i class="fa fa-google-plus"></i></a>
+                                    <a href="<%= ourTeam.getSocialMediaLinks()[3]%>"><i class="fa fa-linkedin"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <!-- BEGAIN SINGLE TEAM SLIDE#2 -->
-                        <div class="col-lg-3 col-md-3 col-sm-4">
-                            <div class="single_team wow fadeInUp">
-                                <div class="team_img">
-                                    <img src="img/team-2.jpg" alt="img">
-                                </div>
-                                <h5>Jamie Sidens</h5>
-                                <span>CMS Developer</span>                        
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-                                <div class="team_social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- BEGAIN SINGLE TEAM SLIDE#3 -->
-                        <div class="col-lg-3 col-md-3 col-sm-4">
-                            <div class="single_team wow fadeInUp">
-                                <div class="team_img">
-                                    <img src="img/team-3.jpg" alt="img">
-                                </div>
-                                <h5>Jamie Sidens</h5>
-                                <span>Manager</span>                        
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-                                <div class="team_social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- BEGAIN SINGLE TEAM SLIDE#4 -->
-                        <div class="col-lg-3 col-md-3 col-sm-4">
-                            <div class="single_team wow fadeInUp">
-                                <div class="team_img">
-                                    <img src="img/team-4.jpg" alt="img">
-                                </div>
-                                <h5>Jamie Sidens</h5>
-                                <span>Developer</span>                        
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-                                <div class="team_social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- BEGAIN SINGLE TEAM SLIDE#5 -->
-                        <div class="col-lg-3 col-md-3 col-sm-4">
-                            <div class="single_team wow fadeInUp">
-                                <div class="team_img">
-                                    <img src="img/team-5.jpg" alt="img">
-                                </div>
-                                <h5>Jamie Sidens</h5>
-                                <span>Programmer</span>                        
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-                                <div class="team_social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- BEGAIN SINGLE TEAM SLIDE#6 -->
-                        <div class="col-lg-3 col-md-3 col-sm-4">
-                            <div class="single_team wow fadeInUp">
-                                <div class="team_img">
-                                    <img src="img/team-1.jpg" alt="img">
-                                </div>
-                                <h5>Jamie Sidens</h5>
-                                <span>Web Designer</span>                        
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-                                <div class="team_social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- BEGAIN SINGLE TEAM SLIDE#7 -->
-                        <div class="col-lg-3 col-md-3 col-sm-4">
-                            <div class="single_team wow fadeInUp">
-                                <div class="team_img">
-                                    <img src="img/team-2.jpg" alt="img">
-                                </div>
-                                <h5>Jone Doe</h5>
-                                <span>Marketing Head</span>                        
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-                                <div class="team_social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>                              
+
+                        <% }%>
                     </div>
                 </div>
             </div>
@@ -403,92 +305,28 @@
         <div class="row col-lg-12 col-md-12">
             <div class="pricing_area">
                 <div class="row">
-                    <!-- BEGAIN BASIC PRICE TABLE -->
-                    <!--Only one div inside a loop-->
-                    <!--href=myurlWithId-->
+
+                    <% for (OurPackages ourPackages : featurePage.getOurPackages()) {%>
+
                     <div class="col-lg-3 col-md-3 col-sm-3">
                         <div class="single_price wow fadeInUp">
-                            <h3>Basic</h3>
+                            <h3><%= ourPackages.getPackageName()%></h3>
                             <div class="price">
-                                <!--                                this part will contain the price from
-                                                                package model-->
-                                <h4>$25</h4>
-                                <span>per month</span>
+                                <h4><%= ourPackages.getPackagePrice()%> BDT</h4>
+                                <span>per event</span>
                             </div>
                             <ul class="price_features">
-                                <!--                                this part will contain the features 
-                                                                from package model-->
-                                <li>Responsive <strong>Layout</strong></li>                  
-                                <li><strong>Customizable</strong> Feature</li>
-                                <li>Up to <strong>5 Projects</strong></li>
-                                <li><strong>10 GB</strong> Storage</li>
-                                <li>Up to <strong>100 Users</strong></li>
-                                <li><strong>15 GB</strong> Bandwidth</li>
-                                <li><strong>Security Suite</strong></li>
+
+                                <% for (String offer : ourPackages.getFeatureList()) {%>
+
+                                <li><strong><%= offer%></strong></li>
+                                        <% }%>
                             </ul>
                             <a href="#" class="price_btn">Select Plan</a>
                         </div>
                     </div>
-                    <!-- BEGAIN STANDARD PRICE TABLE -->
-                    <div class="col-lg-3 col-md-3 col-sm-3">
-                        <div class="single_price wow fadeInUp">
-                            <h3>Standard</h3>
-                            <div class="price">
-                                <h4>$50</h4>
-                                <span>per month</span>
-                            </div>
-                            <ul class="price_features">
-                                <li>Responsive <strong>Layout</strong></li>                  
-                                <li><strong>Customizable</strong> Feature</li>
-                                <li>Up to <strong>15 Projects</strong></li>
-                                <li><strong>20 GB</strong> Storage</li>
-                                <li>Up to <strong>100 Users</strong></li>
-                                <li><strong>35 GB</strong> Bandwidth</li>
-                                <li><strong>Security Suite</strong></li>
-                            </ul>
-                            <a href="#" class="price_btn">Select Plan</a>
-                        </div>
-                    </div>
-                    <!-- BEGAIN BUSINESS PRICE TABLE -->
-                    <div class="col-lg-3 col-md-3 col-sm-3">
-                        <div class="single_price business_price wow fadeInUp">
-                            <h3>Business</h3>
-                            <div class="price">
-                                <h4>$125</h4>
-                                <span>per month</span>
-                            </div>
-                            <ul class="price_features">
-                                <li>Responsive <strong>Layout</strong></li>                  
-                                <li><strong>Customizable</strong> Feature</li>
-                                <li><strong>Unlimited Projects</strong></li>
-                                <li><strong>75 GB</strong> Storage</li>
-                                <li>Up to <strong>100 Users</strong></li>
-                                <li><strong>150 GB</strong> Bandwidth</li>
-                                <li><strong>Security Suite</strong></li>
-                            </ul>
-                            <a href="#" class="price_btn">Select Plan</a>
-                        </div>
-                    </div>
-                    <!-- BEGAIN DELUX PRICE TABLE -->
-                    <div class="col-lg-3 col-md-3 col-sm-3">
-                        <div class="single_price wow fadeInUp">
-                            <h3>Delux</h3>
-                            <div class="price">
-                                <h4>$250</h4>
-                                <span>per month</span>
-                            </div>
-                            <ul class="price_features">
-                                <li>Responsive <strong>Layout</strong></li>                  
-                                <li><strong>Customizable</strong> Feature</li>
-                                <li><strong>Unlimited Projects</strong></li>
-                                <li><strong>175 GB</strong> Storage</li>
-                                <li>Up to <strong>100 Users</strong></li>
-                                <li><strong>750 GB</strong> Bandwidth</li>
-                                <li><strong>Security Suite</strong></li>
-                            </ul>
-                            <a href="#" class="price_btn">Select Plan</a>
-                        </div>
-                    </div>
+
+                    <% }%>
                 </div>
             </div>
         </div>

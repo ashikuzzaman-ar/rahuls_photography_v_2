@@ -35,29 +35,36 @@ public class TeamMembers implements ServiceProvider {
     private FeaturePageProvider featurePageProvider;
     private OurTeamProvider ourTeamProvider;
 
+    private void setFeaturePage(Model model) {
+
+        try {
+
+            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
+            this.featurePage = this.featurePageProvider.getFeaturePage();
+
+            model.addAttribute("featurePage", this.featurePage);
+            model.addAttribute("encodedByteToString", beanProvider.getBean("encodedByteToString"));
+        } catch (Exception e) {
+
+            throw new ExceptionInInitializerError(e);
+        }
+    }
+
     @RequestMapping(value = "team_members")
     protected String doGet1(Model model,
             HttpServletRequest request,
             HttpServletResponse response) {
 
+        this.setFeaturePage(model);
+
         try {
 
             this.admin = (Admin) request.getSession().getAttribute("admin");
-            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
 
             if (this.admin == null) {
 
                 return "admin_panel";
             } else {
-
-                this.featurePage = this.featurePageProvider.getFeaturePage();
-
-                if (this.featurePage.getOurTeamMembers() != null) {
-
-                    model.addAttribute("ourTeams", this.featurePage.getOurTeamMembers());
-                    model.addAttribute("encodedByteToString", beanProvider.getBean("encodedByteToString"));
-                }
 
                 return "team_members";
             }
@@ -73,26 +80,18 @@ public class TeamMembers implements ServiceProvider {
             HttpServletRequest request,
             HttpServletResponse response) {
 
+        this.setFeaturePage(model);
+
         try {
 
             this.admin = (Admin) request.getSession().getAttribute("admin");
-            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
 
-            if (this.admin != null) {
-
-                this.featurePage = this.featurePageProvider.getFeaturePage();
-
-                if (this.featurePage.getOurTeamMembers() != null && this.featurePage.getOurTeamMembers().size() > 0) {
-
-                    model.addAttribute("ourTeams", this.featurePage.getOurTeamMembers());
-                    model.addAttribute("encodedByteToString", beanProvider.getBean("encodedByteToString"));
-                }
-
-                return "team_members";
-            } else {
+            if (this.admin == null) {
 
                 return "admin_panel";
+            } else {
+
+                return "team_members";
             }
 
         } catch (Exception e) {
@@ -106,26 +105,18 @@ public class TeamMembers implements ServiceProvider {
             HttpServletRequest request,
             HttpServletResponse response) {
 
+        this.setFeaturePage(model);
+
         try {
 
             this.admin = (Admin) request.getSession().getAttribute("admin");
-            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
 
-            if (this.admin != null) {
-
-                this.featurePage = this.featurePageProvider.getFeaturePage();
-
-                if (this.featurePage.getOurTeamMembers() != null && this.featurePage.getOurTeamMembers().size() > 0) {
-
-                    model.addAttribute("ourTeams", this.featurePage.getOurTeamMembers());
-                    model.addAttribute("encodedByteToString", beanProvider.getBean("encodedByteToString"));
-                }
-
-                return "team_members";
-            } else {
+            if (this.admin == null) {
 
                 return "admin_panel";
+            } else {
+
+                return "team_members";
             }
 
         } catch (Exception e) {
@@ -142,20 +133,21 @@ public class TeamMembers implements ServiceProvider {
             @ModelAttribute("ourTeam") OurTeam ourTeam,
             BindingResult bindingResult) {
 
+        this.setFeaturePage(model);
+        
         try {
 
             this.admin = (Admin) request.getSession().getAttribute("admin");
-            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
 
-            if (this.admin != null) {
-
+            if (this.admin == null) {
+                
+                return "admin_panel";
+            } else {
+                
                 if (profilePicture != null) {
 
                     ourTeam.setProfilePicture(profilePicture.getBytes());
                 }
-
-                this.featurePage = this.featurePageProvider.getFeaturePage();
 
                 ourTeam.setFeaturePage(this.featurePage);
 
@@ -163,16 +155,7 @@ public class TeamMembers implements ServiceProvider {
 
                 this.featurePageProvider.updateFeaturePage(this.featurePage);
 
-                if (this.featurePage.getOurTeamMembers() != null && this.featurePage.getOurTeamMembers().size() > 0) {
-
-                    model.addAttribute("ourTeams", this.featurePage.getOurTeamMembers());
-                    model.addAttribute("encodedByteToString", beanProvider.getBean("encodedByteToString"));
-                }
-
                 return "team_members";
-            } else {
-
-                return "admin_panel";
             }
 
         } catch (Exception e) {
@@ -187,32 +170,24 @@ public class TeamMembers implements ServiceProvider {
             HttpServletResponse response,
             @RequestParam(value = "member_id", defaultValue = "") String memberId) {
 
+        this.setFeaturePage(model);
+        
         try {
 
             this.admin = (Admin) request.getSession().getAttribute("admin");
-            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
             this.ourTeamProvider = (OurTeamProvider) beanProvider.getBean("ourTeamProvider");
 
-            if (this.admin != null) {
-
+            if (this.admin == null) {
+                
+                return "admin_panel";
+            } else {
+                
                 OurTeam ourTeam = new OurTeam();
                 ourTeam.setId(Integer.parseInt(memberId));
-                
+
                 this.ourTeamProvider.removeOurTeam(ourTeam);
-                
-                this.featurePage = this.featurePageProvider.getFeaturePage();
-
-                if (this.featurePage.getOurTeamMembers() != null) {
-
-                    model.addAttribute("ourTeams", this.featurePage.getOurTeamMembers());
-                    model.addAttribute("encodedByteToString", beanProvider.getBean("encodedByteToString"));
-                }
 
                 return "team_members";
-            } else {
-
-                return "admin_panel";
             }
 
         } catch (Exception e) {

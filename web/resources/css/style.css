@@ -74,17 +74,6 @@ img{
     z-index:99999; /* makes sure it stays on top */
 }
 
-#status {
-    width:200px;
-    height:200px;
-    position:absolute;
-    left:50%; /* centers the loading animation horizontally one the screen */
-    top:50%; /* centers the loading animation vertically one the screen */
-    background-image:url(../img/status.gif); /* path to your loading animation */
-    background-repeat:no-repeat;
-    background-position:center;
-    margin:-100px 0 0 -100px; /* is width and height divided by two */
-}
 
 /*scrol to top*/
 
@@ -572,19 +561,6 @@ img{
 }
 
 
-.skills_area{
-    float: left;
-    display: inline;
-    width: 100%;
-    min-height: 350px;
-    padding: 85px 0px;
-    background-image: url(../img/skill.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    position: relative;
-}
-
-
 .skills{
     position: relative;
     z-index: 999;
@@ -723,19 +699,6 @@ div[data-dimension] {
     display: inline;
     float: left;
     padding: 0 0 80px;
-    width: 100%;
-}
-
-
-.counter_section {
-    background-image: url(../img/works_counterbg.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    display: inline;
-    float: left;
-    min-height: 350px;
-    padding: 80px 0;
-    position: relative;
     width: 100%;
 }
 
@@ -1591,18 +1554,6 @@ textarea .form-control {
     color: #ff0000;
     margin-bottom: 10px;
     padding: 5px;
-}
-
-
-#contactFeature{
-    background-image: url(../img/contact-feature-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;	
-    position: relative;
-    float: left;
-    display: block;
-    width: 100%;
-    padding: 50px 0px;
 }
 
 

@@ -29,36 +29,36 @@
     </bean>
     
     
-    <bean class="com.studevs.utils.providers.services.GalleryImagesProvider" id="galleryImagesProvider" scope="prototype">
+    <bean class="com.studevs.utils.providers.services.GalleryImagesProvider" id="galleryImagesProvider">
         
     </bean>
     
     
-    <bean class="com.studevs.utils.providers.services.FeaturePageProvider" id="featurePageProvider" scope="prototype">
+    <bean class="com.studevs.utils.providers.services.FeaturePageProvider" id="featurePageProvider">
         
     </bean>
     
-    <bean class="com.studevs.utils.providers.services.OurTeamProvider" id="ourTeamProvider" scope="prototype">
+    <bean class="com.studevs.utils.providers.services.OurTeamProvider" id="ourTeamProvider">
         
     </bean>
     
-    <bean class="com.studevs.utils.providers.services.OurPackagesProvider" id="ourPackagesProvider" scope="prototype">
+    <bean class="com.studevs.utils.providers.services.OurPackagesProvider" id="ourPackagesProvider">
         
     </bean>
     
     
     <!--Model Beans-->
-    <bean class="com.studevs.mvc.models.Admin" id="admin" scope="singleton">
+    <bean class="com.studevs.mvc.models.Admin" id="admin">
         
     </bean>
     
     
-    <bean class="com.studevs.mvc.models.GalleryImages" id="galleryImages" scope="prototype">
+    <bean class="com.studevs.mvc.models.GalleryImages" id="galleryImages">
     
     </bean>
     
     
-    <bean class="com.studevs.mvc.models.FeaturePage" id="featurePage" scope="singleton">
+    <bean class="com.studevs.mvc.models.FeaturePage" id="featurePage">
         <property name="id">
             <value>1</value>
         </property>
@@ -98,12 +98,12 @@
     </bean>
     
     
-    <bean class="com.studevs.mvc.models.OurTeam" id="ourTeam" scope="prototype">
+    <bean class="com.studevs.mvc.models.OurTeam" id="ourTeam">
         
     </bean>
     
     
-    <bean class="com.studevs.mvc.models.OurPackages" id="ourPackages" scope="prototype">
+    <bean class="com.studevs.mvc.models.OurPackages" id="ourPackages">
         
     </bean>
 

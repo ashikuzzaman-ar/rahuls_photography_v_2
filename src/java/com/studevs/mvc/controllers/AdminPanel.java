@@ -26,8 +26,33 @@ import org.springframework.web.multipart.MultipartFile;
 @Controller
 public class AdminPanel implements ServiceProvider {
 
+    private FeaturePage featurePage;
+    private FeaturePageProvider featurePageProvider;
+    private AdminProvider adminProvider;
+    private Admin admin;
+    private GalleryImagesProvider galleryImagesProvider;
+    private GalleryImages galleryImages;
+
+    private void setFeaturePage(Model model) {
+
+        try {
+
+            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
+            this.featurePage = this.featurePageProvider.getFeaturePage();
+
+            model.addAttribute("featurePage", this.featurePage);
+            model.addAttribute("encodedByteToString", beanProvider.getBean("encodedByteToString"));
+        } catch (Exception e) {
+
+            throw new ExceptionInInitializerError(e);
+        }
+    }
+
     @RequestMapping(value = "admin_panel")
-    protected String doGet1(HttpServletRequest request) {
+    protected String doGet1(Model model,
+            HttpServletRequest request) {
+
+        this.setFeaturePage(model);
 
         try {
 
@@ -46,11 +71,13 @@ public class AdminPanel implements ServiceProvider {
             @ModelAttribute("admin") Admin admin,
             BindingResult bindingResult) {
 
+        this.setFeaturePage(model);
+
         try {
 
-            AdminProvider adminProvider = (AdminProvider) beanProvider.getBean("adminProvider");
+            this.adminProvider = (AdminProvider) beanProvider.getBean("adminProvider");
 
-            if (!bindingResult.hasErrors() && adminProvider.isAdmin(admin)) {
+            if (!bindingResult.hasErrors() && this.adminProvider.isAdmin(admin)) {
 
                 request.getSession().setAttribute("admin", admin);
             } else {
@@ -67,12 +94,16 @@ public class AdminPanel implements ServiceProvider {
     }
 
     @RequestMapping(value = "admin_panel_logged_out")
-    protected String doGet2(HttpServletRequest request) {
+    protected String doGet2(Model model,
+            HttpServletRequest request) {
+
+        this.setFeaturePage(model);
 
         try {
 
             request.getSession().setAttribute("admin", null);
-            return "admin_panel";//admin_panel
+
+            return "admin_panel";
         } catch (Exception e) {
 
             request.getSession().setAttribute("admin", null);
@@ -86,18 +117,20 @@ public class AdminPanel implements ServiceProvider {
             HttpServletResponse response,
             @RequestParam(value = "password") String password) {
 
+        this.setFeaturePage(model);
+
         try {
 
-            Admin admin = (Admin) request.getSession().getAttribute("admin");
-            AdminProvider adminProvider = (AdminProvider) beanProvider.getBean("adminProvider");
+            this.admin = (Admin) request.getSession().getAttribute("admin");
+            this.adminProvider = (AdminProvider) beanProvider.getBean("adminProvider");
 
-            if (admin == null) {
+            if (this.admin == null) {
 
                 return "admin_panel";
             } else {
 
-                admin.setPassword(password);
-                adminProvider.updatePassword(admin);
+                this.admin.setPassword(password);
+                this.adminProvider.updatePassword(this.admin);
 
                 return "admin_panel";
             }
@@ -115,13 +148,14 @@ public class AdminPanel implements ServiceProvider {
             @RequestParam(value = "image") MultipartFile[] images,
             @RequestParam(value = "category") List<String> category) {
 
+        this.setFeaturePage(model);
+
         try {
 
-            Admin admin = (Admin) request.getSession().getAttribute("admin");
-            GalleryImages galleryImages;
-            GalleryImagesProvider galleryImagesProvider = (GalleryImagesProvider) beanProvider.getBean("galleryImagesProvider");
+            this.admin = (Admin) request.getSession().getAttribute("admin");
+            this.galleryImagesProvider = (GalleryImagesProvider) beanProvider.getBean("galleryImagesProvider");
 
-            if (admin == null) {
+            if (this.admin == null) {
 
                 return "admin_panel";
             } else {
@@ -132,12 +166,12 @@ public class AdminPanel implements ServiceProvider {
 
                         if (images[i].getBytes().length > 0) {
 
-                            galleryImages = (GalleryImages) beanProvider.getBean("galleryImages");
-                            galleryImages.setImage(images[i].getBytes());
-                            galleryImages.setImageFormat(images[i].getContentType());
-                            galleryImages.setCategory(category.get(i));
+                            this.galleryImages = (GalleryImages) beanProvider.getBean("galleryImages");
+                            this.galleryImages.setImage(images[i].getBytes());
+                            this.galleryImages.setImageFormat(images[i].getContentType());
+                            this.galleryImages.setCategory(category.get(i));
 
-                            galleryImagesProvider.insertNewImage(galleryImages);
+                            this.galleryImagesProvider.insertNewImage(this.galleryImages);
                         }
                     }
                 }
@@ -156,19 +190,21 @@ public class AdminPanel implements ServiceProvider {
             HttpServletResponse response,
             @RequestParam(value = "photoID") Long photoID) {
 
+        this.setFeaturePage(model);
+
         try {
 
-            Admin admin = (Admin) request.getSession().getAttribute("admin");
-            GalleryImagesProvider galleryImagesProvider = (GalleryImagesProvider) beanProvider.getBean("galleryImagesProvider");
+            this.admin = (Admin) request.getSession().getAttribute("admin");
+            this.galleryImagesProvider = (GalleryImagesProvider) beanProvider.getBean("galleryImagesProvider");
 
-            if (admin == null) {
+            if (this.admin == null) {
 
                 return "admin_panel";
             } else {
 
                 if (photoID != null) {
 
-                    galleryImagesProvider.deleteImage(photoID);
+                    this.galleryImagesProvider.deleteImage(photoID);
                 }
                 return "admin_panel";
             }
@@ -185,14 +221,16 @@ public class AdminPanel implements ServiceProvider {
             HttpServletResponse response,
             @RequestParam(value = "image") MultipartFile[] images) {
 
+        this.setFeaturePage(model);
+
         try {
 
-            Admin admin = (Admin) request.getSession().getAttribute("admin");
-            FeaturePage featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            FeaturePageProvider featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
+            this.admin = (Admin) request.getSession().getAttribute("admin");
+            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
+            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
             byte[][] imageByte = new byte[3][];
 
-            if (admin == null) {
+            if (this.admin == null) {
 
                 return "admin_panel";
             } else {
@@ -207,8 +245,8 @@ public class AdminPanel implements ServiceProvider {
                         }
                     }
 
-                    featurePage.setCoverPhotos(imageByte);
-                    featurePageProvider.updateCoverPhotosOfFeaturePage(featurePage);
+                    this.featurePage.setCoverPhotos(imageByte);
+                    this.featurePageProvider.updateCoverPhotosOfFeaturePage(this.featurePage);
                 }
                 return "admin_panel";
             }
@@ -225,14 +263,16 @@ public class AdminPanel implements ServiceProvider {
             HttpServletResponse response,
             @RequestParam(value = "image") MultipartFile[] images) {
 
+        this.setFeaturePage(model);
+
         try {
 
-            Admin admin = (Admin) request.getSession().getAttribute("admin");
-            FeaturePage featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            FeaturePageProvider featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
+            this.admin = (Admin) request.getSession().getAttribute("admin");
+            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
+            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
             byte[][] imageByte = new byte[5][];
 
-            if (admin == null) {
+            if (this.admin == null) {
 
                 return "admin_panel";
             } else {
@@ -247,8 +287,8 @@ public class AdminPanel implements ServiceProvider {
                         }
                     }
 
-                    featurePage.setAboutUsPhotos(imageByte);
-                    featurePageProvider.updateAboutUsPhotosOfFeaturePage(featurePage);
+                    this.featurePage.setAboutUsPhotos(imageByte);
+                    this.featurePageProvider.updateAboutUsPhotosOfFeaturePage(this.featurePage);
                 }
                 return "admin_panel";
             }
@@ -265,14 +305,16 @@ public class AdminPanel implements ServiceProvider {
             HttpServletResponse response,
             @RequestParam(value = "image") MultipartFile image) {
 
+        this.setFeaturePage(model);
+
         try {
 
-            Admin admin = (Admin) request.getSession().getAttribute("admin");
-            FeaturePage featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            FeaturePageProvider featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
+            this.admin = (Admin) request.getSession().getAttribute("admin");
+            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
+            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
             byte[] imageByte;
 
-            if (admin == null) {
+            if (this.admin == null) {
 
                 return "admin_panel";
             } else {
@@ -281,8 +323,8 @@ public class AdminPanel implements ServiceProvider {
 
                     imageByte = image.getBytes();
 
-                    featurePage.setOurSkillsPhoto(imageByte);
-                    featurePageProvider.updateOurSkillsPhotoOfFeaturePage(featurePage);
+                    this.featurePage.setOurSkillsPhoto(imageByte);
+                    this.featurePageProvider.updateOurSkillsPhotoOfFeaturePage(this.featurePage);
                 }
                 return "admin_panel";
             }
@@ -299,14 +341,16 @@ public class AdminPanel implements ServiceProvider {
             HttpServletResponse response,
             @RequestParam(value = "image") MultipartFile image) {
 
+        this.setFeaturePage(model);
+
         try {
 
-            Admin admin = (Admin) request.getSession().getAttribute("admin");
-            FeaturePage featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            FeaturePageProvider featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
+            this.admin = (Admin) request.getSession().getAttribute("admin");
+            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
+            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
             byte[] imageByte;
 
-            if (admin == null) {
+            if (this.admin == null) {
 
                 return "admin_panel";
             } else {
@@ -315,8 +359,8 @@ public class AdminPanel implements ServiceProvider {
 
                     imageByte = image.getBytes();
 
-                    featurePage.setSomeMilestoneWorksPhoto(imageByte);
-                    featurePageProvider.updateSomeMilestoneWorksPhotoOfFeaturePage(featurePage);
+                    this.featurePage.setSomeMilestoneWorksPhoto(imageByte);
+                    this.featurePageProvider.updateSomeMilestoneWorksPhotoOfFeaturePage(this.featurePage);
                 }
                 return "admin_panel";
             }
@@ -333,14 +377,16 @@ public class AdminPanel implements ServiceProvider {
             HttpServletResponse response,
             @RequestParam(value = "image") MultipartFile image) {
 
+        this.setFeaturePage(model);
+
         try {
 
-            Admin admin = (Admin) request.getSession().getAttribute("admin");
-            FeaturePage featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            FeaturePageProvider featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
+            this.admin = (Admin) request.getSession().getAttribute("admin");
+            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
+            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
             byte[] imageByte;
 
-            if (admin == null) {
+            if (this.admin == null) {
 
                 return "admin_panel";
             } else {
@@ -349,8 +395,8 @@ public class AdminPanel implements ServiceProvider {
 
                     imageByte = image.getBytes();
 
-                    featurePage.setContactUsPhoto(imageByte);
-                    featurePageProvider.updateContactUsPhotoOfFeaturePage(featurePage);
+                    this.featurePage.setContactUsPhoto(imageByte);
+                    this.featurePageProvider.updateContactUsPhotoOfFeaturePage(this.featurePage);
                 }
                 return "admin_panel";
             }
@@ -367,14 +413,16 @@ public class AdminPanel implements ServiceProvider {
             HttpServletResponse response,
             @RequestParam(value = "image") MultipartFile image) {
 
+        this.setFeaturePage(model);
+
         try {
 
-            Admin admin = (Admin) request.getSession().getAttribute("admin");
-            FeaturePage featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            FeaturePageProvider featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
+            this.admin = (Admin) request.getSession().getAttribute("admin");
+            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
+            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
             byte[] imageByte;
 
-            if (admin == null) {
+            if (this.admin == null) {
 
                 return "admin_panel";
             } else {
@@ -383,8 +431,8 @@ public class AdminPanel implements ServiceProvider {
 
                     imageByte = image.getBytes();
 
-                    featurePage.setStartingGifAnimation(imageByte);
-                    featurePageProvider.updateStartingGifAnimationOfFeaturePage(featurePage);
+                    this.featurePage.setStartingGifAnimation(imageByte);
+                    this.featurePageProvider.updateStartingGifAnimationOfFeaturePage(this.featurePage);
                 }
                 return "admin_panel";
             }
@@ -401,14 +449,16 @@ public class AdminPanel implements ServiceProvider {
             HttpServletResponse response,
             @RequestParam Map<String, String> someMilestoneWorks) {
 
+        this.setFeaturePage(model);
+
         try {
 
-            Admin admin = (Admin) request.getSession().getAttribute("admin");
-            FeaturePage featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            FeaturePageProvider featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
+            this.admin = (Admin) request.getSession().getAttribute("admin");
+            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
+            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
             Integer[] someMilestoneWork = new Integer[4];
 
-            if (admin == null) {
+            if (this.admin == null) {
 
                 return "admin_panel";
             } else {
@@ -420,8 +470,8 @@ public class AdminPanel implements ServiceProvider {
                     someMilestoneWork[2] = Integer.parseInt(someMilestoneWorks.get("events"));
                     someMilestoneWork[3] = Integer.parseInt(someMilestoneWorks.get("subscribers"));
 
-                    featurePage.setSomeMilestoneWorksCounter(someMilestoneWork);
-                    featurePageProvider.updateSomeMilestoneWorksCounterOfFeaturePage(featurePage);
+                    this.featurePage.setSomeMilestoneWorksCounter(someMilestoneWork);
+                    this.featurePageProvider.updateSomeMilestoneWorksCounterOfFeaturePage(this.featurePage);
                 }
                 return "admin_panel";
             }

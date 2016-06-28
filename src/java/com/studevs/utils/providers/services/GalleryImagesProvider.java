@@ -23,7 +23,7 @@ public class GalleryImagesProvider implements ServiceProvider {
     private Transaction transaction;
     private Query query;
     private String hql;
-    private List resultList = null;
+    private List resultList;
 
     public boolean insertNewImage(GalleryImages galleryImages) {
 
@@ -83,5 +83,75 @@ public class GalleryImagesProvider implements ServiceProvider {
             this.session.close();
         }
         return isOk;
+    }
+
+    public GalleryImages getGalleryImage(Long id) {
+
+        this.galleryImages = null;
+        this.session = sessionFactory.openSession();
+        this.transaction = null;
+        this.query = null;
+
+        try {
+
+            this.transaction = this.session.beginTransaction();
+
+            this.hql = "FROM GalleryImages GI WHERE GI.id = :image_id";
+            this.query = this.session.createQuery(this.hql);
+            this.query.setParameter("image_id", id);
+
+            this.resultList = this.query.list();
+            this.transaction.commit();
+
+            if (this.resultList != null && this.resultList.size() > 0) {
+
+                this.galleryImages = (GalleryImages) this.resultList.get(0);
+            }
+        } catch (Exception e) {
+
+            if (this.transaction != null) {
+
+                this.transaction.rollback();
+            }
+            throw new ExceptionInInitializerError(e);
+        } finally {
+
+            this.session.close();
+        }
+
+        return this.galleryImages;
+    }
+
+    public List getGalleryImages(int initialValue, int terminalValue) {
+
+        this.resultList = null;
+        this.session = sessionFactory.openSession();
+        this.transaction = null;
+        this.query = null;
+
+        try {
+
+            this.transaction = this.session.beginTransaction();
+
+            this.hql = "FROM GalleryImages GI ORDER BY GI.id DESC";
+            this.query = this.session.createQuery(this.hql);
+            this.query.setFirstResult(initialValue);
+            this.query.setMaxResults(terminalValue);
+
+            this.resultList = this.query.list();
+            this.transaction.commit();
+        } catch (Exception e) {
+
+            if (this.transaction != null) {
+
+                this.transaction.rollback();
+            }
+            throw new ExceptionInInitializerError(e);
+        } finally {
+
+            this.session.close();
+        }
+
+        return this.resultList;
     }
 }

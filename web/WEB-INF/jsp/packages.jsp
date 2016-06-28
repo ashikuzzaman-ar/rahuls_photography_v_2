@@ -1,9 +1,6 @@
-<%@page import="java.util.List"%>
-<%@page import="com.studevs.mvc.models.OurPackages"%>
 <%@page import="com.studevs.mvc.models.Admin"%>
 <%
     Admin admin = (Admin) request.getSession().getAttribute("admin");
-    List<OurPackages> ourPackageses = (List) request.getAttribute("ourPackages");
 %>
 
 
@@ -28,15 +25,15 @@
             <div class="pricing_area">
                 <div class="row">
 
-                    <% if (ourPackageses.size() == 0) { %>
+                    <% if (featurePage.getOurPackages().size() == 0) { %>
                     <h1>No Package Is Present!</h1>
                     <h1>Please Add Packages From Below</h1>
 
                     <%
 
-                    } else if (ourPackageses.size() > 0) {
+                    } else if (featurePage.getOurPackages().size() > 0) {
 
-                        for (OurPackages ourPackages : ourPackageses) {
+                        for (OurPackages ourPackages : featurePage.getOurPackages()) {
                     %>
                     <div class="col-lg-3 col-md-3 col-sm-3">
                         <div class="single_price wow fadeInUp">

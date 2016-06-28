@@ -33,28 +33,36 @@ public class Packages implements ServiceProvider {
     private FeaturePageProvider featurePageProvider;
     private OurPackagesProvider ourPackagesProvider;
 
+    private void setFeaturePage(Model model) {
+
+        try {
+
+            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
+            this.featurePage = this.featurePageProvider.getFeaturePage();
+
+            model.addAttribute("featurePage", this.featurePage);
+            model.addAttribute("encodedByteToString", beanProvider.getBean("encodedByteToString"));
+        } catch (Exception e) {
+
+            throw new ExceptionInInitializerError(e);
+        }
+    }
+
     @RequestMapping(value = "packages")
     protected String doGet1(Model model,
             HttpServletRequest request,
             HttpServletResponse response) {
 
+        this.setFeaturePage(model);
+
         try {
 
             this.admin = (Admin) request.getSession().getAttribute("admin");
-            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
 
             if (this.admin == null) {
 
                 return "admin_panel";
             } else {
-
-                this.featurePage = this.featurePageProvider.getFeaturePage();
-
-                if (this.featurePage.getOurPackages() != null) {
-
-                    model.addAttribute("ourPackages", this.featurePage.getOurPackages());
-                }
 
                 return "packages";
             }
@@ -70,25 +78,18 @@ public class Packages implements ServiceProvider {
             HttpServletRequest request,
             HttpServletResponse response) {
 
+        this.setFeaturePage(model);
+
         try {
 
             this.admin = (Admin) request.getSession().getAttribute("admin");
-            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
 
-            if (this.admin != null) {
-
-                this.featurePage = this.featurePageProvider.getFeaturePage();
-
-                if (this.featurePage.getOurPackages() != null) {
-
-                    model.addAttribute("ourPackages", this.featurePage.getOurPackages());
-                }
-
-                return "packages";
-            } else {
+            if (this.admin == null) {
 
                 return "admin_panel";
+            } else {
+
+                return "packages";
             }
 
         } catch (Exception e) {
@@ -102,25 +103,18 @@ public class Packages implements ServiceProvider {
             HttpServletRequest request,
             HttpServletResponse response) {
 
+        this.setFeaturePage(model);
+
         try {
 
             this.admin = (Admin) request.getSession().getAttribute("admin");
-            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
 
-            if (this.admin != null) {
-
-                this.featurePage = this.featurePageProvider.getFeaturePage();
-
-                if (this.featurePage.getOurPackages() != null) {
-
-                    model.addAttribute("ourPackages", this.featurePage.getOurPackages());
-                }
-
-                return "packages";
-            } else {
+            if (this.admin == null) {
 
                 return "admin_panel";
+            } else {
+
+                return "packages";
             }
 
         } catch (Exception e) {
@@ -138,31 +132,28 @@ public class Packages implements ServiceProvider {
         try {
 
             this.admin = (Admin) request.getSession().getAttribute("admin");
-            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
             this.ourPackagesProvider = (OurPackagesProvider) beanProvider.getBean("ourPackagesProvider");
 
-            if (this.admin != null) {
+            if (this.admin == null) {
+
+                this.setFeaturePage(model);
+
+                return "admin_panel";
+            } else {
 
                 OurPackages ourPackages = new OurPackages();
                 ourPackages.setId(Integer.parseInt(packageId));
 
                 this.ourPackagesProvider.removeOurPackages(ourPackages);
 
-                this.featurePage = this.featurePageProvider.getFeaturePage();
-
-                if (this.featurePage.getOurPackages() != null) {
-
-                    model.addAttribute("ourPackages", this.featurePage.getOurPackages());
-                }
+                this.setFeaturePage(model);
 
                 return "packages";
-            } else {
-
-                return "admin_panel";
             }
 
         } catch (Exception e) {
+
+            this.setFeaturePage(model);
 
             return "team_members";
         }
@@ -177,12 +168,15 @@ public class Packages implements ServiceProvider {
         try {
 
             this.admin = (Admin) request.getSession().getAttribute("admin");
-            this.featurePage = (FeaturePage) beanProvider.getBean("featurePage");
-            this.featurePageProvider = (FeaturePageProvider) beanProvider.getBean("featurePageProvider");
 
-            if (this.admin != null) {
+            if (this.admin == null) {
 
-                this.featurePage = this.featurePageProvider.getFeaturePage();
+                this.setFeaturePage(model);
+
+                return "admin_panel";
+            } else {
+
+                this.setFeaturePage(model);
 
                 ourPackages.setFeaturePage(this.featurePage);
 
@@ -190,19 +184,13 @@ public class Packages implements ServiceProvider {
 
                 this.featurePageProvider.updateFeaturePage(this.featurePage);
 
-                if (this.featurePage.getOurPackages() != null && this.featurePage.getOurPackages().size() > 0) {
-
-                    model.addAttribute("ourPackages", this.featurePage.getOurPackages());
-                }
-
                 return "packages";
-            } else {
-
-                return "admin_panel";
             }
 
         } catch (Exception e) {
 
+            this.setFeaturePage(model);
+            
             return "team_members";
         }
     }

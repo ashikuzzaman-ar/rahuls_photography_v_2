@@ -1,3 +1,16 @@
+<%@page import="com.studevs.utils.EncodedByteToString"%>
+<%@page import="com.studevs.mvc.models.FeaturePage"%>
+<%@page import="com.studevs.mvc.models.OurTeam"%>
+<%@page import="com.studevs.mvc.models.OurPackages"%>
+<%@page import="java.util.List"%>
+<%@page import="com.studevs.mvc.models.GalleryImages"%>
+<%
+    FeaturePage featurePage = (FeaturePage) request.getAttribute("featurePage");
+    EncodedByteToString encodedByteToString = (EncodedByteToString) request.getAttribute("encodedByteToString");
+    List<GalleryImages> galleryImageses = (List<GalleryImages>) request.getAttribute("galleryImageses");
+    GalleryImages galleryImages = (GalleryImages) request.getAttribute("galleryImages");
+    String imageView = (String) request.getAttribute("imageView");
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -35,6 +48,65 @@
         <link id="orginal" href="css/themes/default-theme.css" rel="stylesheet">
         <!-- Main structure css file -->
         <link href="css/style.css" rel="stylesheet">
+
+
+        <% if (featurePage != null) {%>
+
+        <style type="text/css">
+
+            #status {
+                width:200px;
+                height:200px;
+                position:absolute;
+                left:50%; /* centers the loading animation horizontally one the screen */
+                top:50%; /* centers the loading animation vertically one the screen */
+                background-image:url("data:image/gif;base64,<%= encodedByteToString.getStringImage(featurePage.getStartingGifAnimation())%>"); /* path to your loading animation */
+                background-repeat:no-repeat;
+                background-position:center;
+                margin:-100px 0 0 -100px; /* is width and height divided by two */
+            }
+
+
+            .skills_area{
+                float: left;
+                display: inline;
+                width: 100%;
+                min-height: 350px;
+                padding: 85px 0px;
+                background-image: url("data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getOurSkillsPhoto())%>");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                position: relative;
+            }
+
+
+            .counter_section {
+                background-image: url("data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getSomeMilestoneWorksPhoto())%>");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                display: inline;
+                float: left;
+                min-height: 350px;
+                padding: 80px 0;
+                position: relative;
+                width: 100%;
+            }
+
+
+            #contactFeature{
+                background-image: url("data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getContactUsPhoto())%>");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;	
+                position: relative;
+                float: left;
+                display: block;
+                width: 100%;
+                padding: 50px 0px;
+            }
+
+        </style>
+
+        <% } %>
 
         <!-- Google fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -85,6 +157,8 @@
                 </nav>  
             </div>
             <!-- END MENU -->
+            <% if (imageView == null && featurePage != null) {%>
+
             <!-- BEGIN SLIDER AREA-->
             <div class="slider_area">
                 <!-- BEGIN SLIDER-->          
@@ -96,7 +170,7 @@
                             <!-- FIRST SLIDE OVERLAY -->
                             <div class="slider_overlay"></div> 
                             <!-- FIRST SLIDE MAIN IMAGE -->
-                            <img src="img/full-slider/full-slide7.jpg" alt="img">
+                            <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getCoverPhotos()[0])%>" alt="img">
                             <!-- FIRST SLIDE CAPTION-->
                             <div class="slider_caption">
                                 <h2>Welcome to our Studio</h2>
@@ -110,7 +184,7 @@
                             <!-- SECOND SLIDE OVERLAY -->
                             <div class="slider_overlay"></div> 
                             <!-- SECOND SLIDE MAIN IMAGE -->
-                            <img src="img/full-slider/full-slide2.jpg" alt="img">
+                            <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getCoverPhotos()[1])%>" alt="img">
                             <!-- SECOND SLIDE CAPTION-->
                             <div class="slider_caption">
                                 <h2>Hi,We are Ultramodern cinematography</h2>
@@ -124,7 +198,7 @@
                             <!-- THIRD SLIDE OVERLAY -->
                             <div class="slider_overlay"></div> 
                             <!-- THIRD SLIDE MAIN IMAGE -->
-                            <img src="img/full-slider/full-slide1.jpg" alt="img">
+                            <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getCoverPhotos()[2])%>" alt="img">
                             <!-- THIRD SLIDE CAPTION-->
                             <div class="slider_caption">
                                 <h2>we'll change your Idea of Photography</h2>
@@ -150,5 +224,7 @@
                 <!-- END SLIDER-->          
             </div>
             <!-- END SLIDER AREA -->
+
+            <% }%>
         </header>
         <!--=========== End HEADER SECTION ================--> 
