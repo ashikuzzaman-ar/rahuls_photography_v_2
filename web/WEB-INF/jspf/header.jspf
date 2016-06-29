@@ -1,3 +1,4 @@
+<%@page import="com.studevs.mvc.models.Admin"%>
 <%@page import="com.studevs.utils.EncodedByteToString"%>
 <%@page import="com.studevs.mvc.models.FeaturePage"%>
 <%@page import="com.studevs.mvc.models.OurTeam"%>
@@ -10,6 +11,7 @@
     List<GalleryImages> galleryImageses = (List<GalleryImages>) request.getAttribute("galleryImageses");
     GalleryImages galleryImages = (GalleryImages) request.getAttribute("galleryImages");
     String imageView = (String) request.getAttribute("imageView");
+    Admin admin = (Admin) request.getSession().getAttribute("admin");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -170,7 +172,7 @@
                             <!-- FIRST SLIDE OVERLAY -->
                             <div class="slider_overlay"></div> 
                             <!-- FIRST SLIDE MAIN IMAGE -->
-                            <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getCoverPhotos()[0])%>" alt="img">
+                            <img class="img-responsive" src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getCoverPhotos()[0])%>" alt="img">
                             <!-- FIRST SLIDE CAPTION-->
                             <div class="slider_caption">
                                 <h2>Welcome to our Studio</h2>

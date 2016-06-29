@@ -1,9 +1,3 @@
-<%@page import="com.studevs.mvc.models.Admin"%>
-<%
-    Admin admin = (Admin) request.getSession().getAttribute("admin");
-%>
-
-
 <%
     if (admin == null) {
         response.sendRedirect("index");

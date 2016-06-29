@@ -56,23 +56,23 @@
                                     <div class="featured_slider">
                                         <!-- SINGLE SLIDE IN THE SLIDER -->
                                         <div class="single_iteam">
-                                            <a href="#"> <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[0])%>" alt="img"></a>                          
+                                            <img class="img-thumbnail img-responsive" src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[0])%>" alt="img">                         
                                         </div>
                                         <!-- SINGLE SLIDE IN THE SLIDER -->
                                         <div class="single_iteam">
-                                            <a href="#"> <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[1])%>" alt="img"></a>                          
+                                            <img class="img-thumbnail img-responsive" src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[1])%>" alt="img">                          
                                         </div>
                                         <!-- SINGLE SLIDE IN THE SLIDER -->
                                         <div class="single_iteam">
-                                            <a href="#"> <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[2])%>" alt="img"></a>                           
+                                            <img class="img-thumbnail img-responsive" src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[2])%>" alt="img">                       
                                         </div>
                                         <!-- SINGLE SLIDE IN THE SLIDER -->
                                         <div class="single_iteam">
-                                            <a href="#"> <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[3])%>" alt="img"></a>                           
+                                            <img class="img-thumbnail img-responsive" src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[3])%>" alt="img">                          
                                         </div>
                                         <!-- SINGLE SLIDE IN THE SLIDER -->
                                         <div class="single_iteam">
-                                            <a href="#"> <img src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[4])%>" alt="img"></a>                           
+                                            <img class="img-thumbnail img-responsive" src="data:image/jpeg;base64,<%= encodedByteToString.getStringImage(featurePage.getAboutUsPhotos()[4])%>" alt="img">                           
                                         </div>
                                     </div>
                                     <!-- END FEATURED SLIDER -->

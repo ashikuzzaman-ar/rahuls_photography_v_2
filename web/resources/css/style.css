@@ -13,6 +13,7 @@
   #CONTACT US SECTION
   #FOOTER
   #BLOG PAGE 
+  #Gallery
 */
 
 
@@ -2444,4 +2445,21 @@ textarea .form-control {
     .subscr_btn {font-size: 11px;}
     .slider_caption {margin-top: 34%;}  
 
+}
+
+/*Gallery Start*/
+.gal-im-margin{
+
+    background-color: #313338;
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 230px; 
+    align-content: center;
+}
+
+.gal-im-single{
+    
+    background-color: #777
 }
