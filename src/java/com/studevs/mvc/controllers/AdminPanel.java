@@ -5,6 +5,7 @@ import com.studevs.mvc.models.GalleryImages;
 import com.studevs.utils.providers.ServiceProvider;
 import com.studevs.utils.providers.services.FeaturePageProvider;
 import com.studevs.utils.providers.services.GalleryImagesProvider;
+import java.security.Principal;
 import java.util.List;
 import java.util.Map;
 import org.springframework.stereotype.Controller;
@@ -41,7 +42,8 @@ public class AdminPanel implements ServiceProvider {
     }
 
     @RequestMapping("admin_panel")
-    public String doGET1() {
+    public String doGET1(Model model, Principal principal) {
+        model.addAttribute("username", principal.getName());
         return "admin_panel";
     }
 

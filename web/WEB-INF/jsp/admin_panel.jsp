@@ -10,6 +10,8 @@
                         <h2 class="wow fadeInLeftBig">Welcome to Control Panel</h2>
                         <br/>
                         <!--Add username here-->
+                        Username : <%=request.getAttribute("username")%>
+                        <br>
                         <a class="btn btn-lg btn-danger" href="logout">Log Out</a>
                         <p>As admin authority , you can change each content of your site. Insert, Edit or Delete whatever you want!</p>
                     </div>
