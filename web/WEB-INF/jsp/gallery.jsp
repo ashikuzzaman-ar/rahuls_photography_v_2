@@ -44,13 +44,13 @@
                             <table border="0">
                                 <tr>
                                     <td>
-                                        <input size="6" class="form-control" type="text" name="initialValue" value="${initialValue}">
+                                        <input size="6" class="form-control" type="number" min="1" name="initialValue" value="${initialValue}">
                                     </td>
                                     <td align="center">
                                         -----
                                     </td>
                                     <td>
-                                        <input size="6" class="form-control" type="text" name="terminalValue" value="${terminalValue}">
+                                        <input size="6" class="form-control" type="number" min="1" name="terminalValue" value="${terminalValue}">
                                     </td>
                                 </tr>
                                 <tr>

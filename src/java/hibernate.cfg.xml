@@ -21,5 +21,6 @@
         <mapping class="com.studevs.mvc.models.GalleryImages"/>
         <mapping class="com.studevs.mvc.models.OurPackages"/>
         <mapping class="com.studevs.mvc.models.OurTeam"/>
+        <mapping class="com.studevs.mvc.models.Orders"/>
     </session-factory>
 </hibernate-configuration>

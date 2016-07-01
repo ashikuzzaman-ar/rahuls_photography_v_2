@@ -50,6 +50,8 @@
         <link id="orginal" href="css/themes/default-theme.css" rel="stylesheet">
         <!-- Main structure css file -->
         <link href="css/style.css" rel="stylesheet">
+        <!--jquery-UI css file-->
+        <link href="css/jquery-ui.css" rel="stylesheet">
 
 
         <% if (featurePage != null) {%>

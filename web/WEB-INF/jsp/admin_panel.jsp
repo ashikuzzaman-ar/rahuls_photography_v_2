@@ -36,7 +36,7 @@
 
             <div class="contact_content">
 
-                <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-lg-offset-3 col-md-offset-3">
                     <div class="contact_form">
 
                         <div id="form-messages"></div>
@@ -72,7 +72,7 @@
 
             <div class="contact_content">
 
-                <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-lg-offset-3 col-md-offset-3">
                     <div class="contact_form">
 
                         <div id="form-messages"></div>
@@ -151,7 +151,7 @@
 
             <div class="contact_content">
 
-                <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-lg-offset-3 col-md-offset-3">
                     <div class="contact_form">
 
                         <div id="form-messages"></div>
@@ -186,7 +186,7 @@
 
             <div class="contact_content">
 
-                <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-lg-offset-3 col-md-offset-3">
                     <div class="contact_form">
 
                         <div id="form-messages"></div>
@@ -221,7 +221,7 @@
 
             <div class="contact_content">
 
-                <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-lg-offset-3 col-md-offset-3">
                     <div class="contact_form">
 
                         <div id="form-messages"></div>
@@ -257,7 +257,7 @@
 
             <div class="contact_content">
 
-                <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-lg-offset-3 col-md-offset-3">
                     <div class="contact_form">
 
                         <div id="form-messages"></div>
@@ -296,7 +296,7 @@
 
             <div class="contact_content">
 
-                <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-lg-offset-3 col-md-offset-3">
                     <div class="contact_form">
 
                         <div id="form-messages"></div>
@@ -331,7 +331,7 @@
 
             <div class="contact_content">
 
-                <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-lg-offset-3 col-md-offset-3">
                     <div class="contact_form">
 
                         <div id="form-messages"></div>
@@ -370,7 +370,7 @@
 
             <div class="contact_content">
 
-                <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-lg-offset-3 col-md-offset-3">
                     <div class="contact_form">
 
                         <div id="form-messages"></div>
@@ -406,7 +406,7 @@
 
             <div class="contact_content">
 
-                <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-lg-offset-3 col-md-offset-3">
                     <div class="contact_form">
 
                         <div id="form-messages"></div>
@@ -440,7 +440,7 @@
 
             <div class="contact_content">
 
-                <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-lg-offset-3 col-md-offset-3">
                     <div class="contact_form">
 
                         <div id="form-messages"></div>
@@ -474,7 +474,7 @@
 
             <div class="contact_content">
 
-                <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-lg-offset-3 col-md-offset-3">
                     <div class="contact_form">
 
                         <div id="form-messages"></div>
@@ -514,7 +514,7 @@
             <!-- BEGAIN LOGIN CONTENT -->
             <div class="contact_content">
                 <!-- BEGAIN LOGIN FORM -->
-                <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-lg-offset-3 col-md-offset-3">
                     <div class="contact_form">
 
                         <!-- FOR LOGIN FORM MESSAGE -->

@@ -2,13 +2,16 @@ package com.studevs.mvc.models;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -24,7 +27,7 @@ public class OurPackages implements Serializable {
     @Column(name = "ID")
     private Integer id;
 
-    @Column(name = "PACKAGE_NAME")
+    @Column(name = "PACKAGE_NAME", unique = true)
     private String packageName;
 
     @Column(name = "PACKAGE_PRICE")
@@ -35,18 +38,22 @@ public class OurPackages implements Serializable {
 
     @ManyToOne(targetEntity = FeaturePage.class, cascade = CascadeType.ALL)
     private FeaturePage featurePage;
+    
+    @OneToMany(targetEntity = Orders.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "ourPackages")
+    private List<Orders> orderses;
 
     public OurPackages() {
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.id);
-        hash = 97 * hash + Objects.hashCode(this.packageName);
-        hash = 97 * hash + Objects.hashCode(this.packagePrice);
-        hash = 97 * hash + Arrays.deepHashCode(this.featureList);
-        hash = 97 * hash + Objects.hashCode(this.featurePage);
+        int hash = 7;
+        hash = 71 * hash + Objects.hashCode(this.id);
+        hash = 71 * hash + Objects.hashCode(this.packageName);
+        hash = 71 * hash + Objects.hashCode(this.packagePrice);
+        hash = 71 * hash + Arrays.deepHashCode(this.featureList);
+        hash = 71 * hash + Objects.hashCode(this.featurePage);
+        hash = 71 * hash + Objects.hashCode(this.orderses);
         return hash;
     }
 
@@ -74,7 +81,10 @@ public class OurPackages implements Serializable {
         if (!Arrays.deepEquals(this.featureList, other.featureList)) {
             return false;
         }
-        return Objects.equals(this.featurePage, other.featurePage);
+        if (!Objects.equals(this.featurePage, other.featurePage)) {
+            return false;
+        }
+        return Objects.equals(this.orderses, other.orderses);
     }
 
     public Integer getId() {
@@ -115,5 +125,13 @@ public class OurPackages implements Serializable {
 
     public void setFeaturePage(FeaturePage featurePage) {
         this.featurePage = featurePage;
+    }
+
+    public List<Orders> getOrderses() {
+        return orderses;
+    }
+
+    public void setOrderses(List<Orders> orderses) {
+        this.orderses = orderses;
     }
 }

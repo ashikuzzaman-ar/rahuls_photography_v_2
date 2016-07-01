@@ -308,23 +308,30 @@
 
                     <% for (OurPackages ourPackages : featurePage.getOurPackages()) {%>
 
-                    <div class="col-lg-3 col-md-3 col-sm-3">
-                        <div class="single_price wow fadeInUp">
-                            <h3><%= ourPackages.getPackageName()%></h3>
-                            <div class="price">
-                                <h4><%= ourPackages.getPackagePrice()%> BDT</h4>
-                                <span>per event</span>
+                    <form action="package_booking" method="POST">
+
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="single_price wow fadeInUp">
+                                <h3><%= ourPackages.getPackageName()%></h3>
+                                <input type="hidden" name="id" value="<%= ourPackages.getId()%>"/>
+                                <input type="hidden" name="packageName" value="<%= ourPackages.getPackageName()%>"/>
+                                <input type="hidden" name="packagePrice" value="<%= ourPackages.getPackagePrice()%>"/>
+                                <div class="price">
+                                    <h4><%= ourPackages.getPackagePrice()%> BDT</h4>
+                                    <span>per event</span>
+                                </div>
+                                <ul class="price_features">
+
+                                    <% for (String offer : ourPackages.getFeatureList()) {%>
+
+                                    <li><strong><%= offer%></strong></li>
+                                            <% }%>
+                                </ul>
+                                <input class="btn price_btn" type="submit" value="Book Now"/>
                             </div>
-                            <ul class="price_features">
-
-                                <% for (String offer : ourPackages.getFeatureList()) {%>
-
-                                <li><strong><%= offer%></strong></li>
-                                        <% }%>
-                            </ul>
-                            <a href="#" class="price_btn">Select Plan</a>
                         </div>
-                    </div>
+
+                    </form>
 
                     <% }%>
                 </div>

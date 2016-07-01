@@ -21,6 +21,29 @@
     </bean>
     
     
+<!--    <bean class="org.springframework.mail.javamail.JavaMailSenderImpl" id="javaMailSender">
+        <property name="host">smtp.gmail.com</property>
+        <property name="port">587</property>
+        <property name="username">rahulahasanphotography.studevs@gmail.com</property>
+        <property name="password">studevsmaster420</property>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.transport.protocol">smtp</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+            </props>
+        </property>
+    </bean>
+    
+    
+    <bean
+        class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="java.lang.Exception">Error</prop>
+            </props>
+        </property>
+    </bean>	-->
     
        
     <!--Service Beans-->
@@ -46,6 +69,9 @@
         
     </bean>
     
+    <bean class="com.studevs.utils.providers.services.OrdersProvider" id="ordersProvider">
+        
+    </bean>
     
     <!--Model Beans-->
     <bean class="com.studevs.mvc.models.Admin" id="admin">
@@ -104,6 +130,11 @@
     
     
     <bean class="com.studevs.mvc.models.OurPackages" id="ourPackages">
+        
+    </bean>
+    
+    
+    <bean class="com.studevs.mvc.models.Orders" id="orders" scope="prototype">
         
     </bean>
 
