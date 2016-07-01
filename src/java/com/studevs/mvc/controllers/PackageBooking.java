@@ -125,7 +125,12 @@ public class PackageBooking implements ServiceProvider {
             OrdersProvider ordersProvider = (OrdersProvider) beanProvider.getBean("ordersProvider");
 
             if (ordersProvider.insertOrders(orders)) {
-
+                
+//                Edit This Portion. If order provider is inserted that means a new order is stored in database. 
+//                So a new mail have to be generated to user's email address and rahul's email address too
+//                we will use our default email for this application.
+//                email id: rahulahasanphotography.studevs@gmail.com
+//                password: studevsmaster420
             }
 
             model.addAttribute("ourPackages", ourPackages);
