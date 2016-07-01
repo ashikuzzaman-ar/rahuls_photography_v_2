@@ -47,9 +47,7 @@
     
        
     <!--Service Beans-->
-    <bean class="com.studevs.utils.providers.services.AdminProvider" id="adminProvider"> 
-               
-    </bean>
+   
     
     
     <bean class="com.studevs.utils.providers.services.GalleryImagesProvider" id="galleryImagesProvider">
@@ -74,9 +72,7 @@
     </bean>
     
     <!--Model Beans-->
-    <bean class="com.studevs.mvc.models.Admin" id="admin">
-        
-    </bean>
+  
     
     
     <bean class="com.studevs.mvc.models.GalleryImages" id="galleryImages">

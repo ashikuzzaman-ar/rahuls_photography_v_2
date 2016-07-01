@@ -4,19 +4,18 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-<!--        <property name="hibernate.connection.url">jdbc:mysql://127.5.208.2:3306/site</property>
+        <!--        <property name="hibernate.connection.url">jdbc:mysql://127.5.208.2:3306/site</property>
         <property name="hibernate.connection.username">adminCRJAenr</property>
         <property name="hibernate.connection.password">Sf3yKmytfdJB</property>-->
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/StuDevs_DB</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/rahul_db</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">studevsdb</property>
+        <property name="hibernate.connection.password"></property>
         <property name="hibernate.connection.pool_size">1</property>
  
  
         <!--<property name="hibernate.hbm2ddl.auto">create</property>-->
  
          
-        <mapping class="com.studevs.mvc.models.Admin"/>
         <mapping class="com.studevs.mvc.models.FeaturePage"/>
         <mapping class="com.studevs.mvc.models.GalleryImages"/>
         <mapping class="com.studevs.mvc.models.OurPackages"/>

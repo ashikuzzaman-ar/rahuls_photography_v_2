@@ -1,17 +1,17 @@
-<%@page import="com.studevs.mvc.models.Admin"%>
 <%@page import="com.studevs.utils.EncodedByteToString"%>
 <%@page import="com.studevs.mvc.models.FeaturePage"%>
 <%@page import="com.studevs.mvc.models.OurTeam"%>
 <%@page import="com.studevs.mvc.models.OurPackages"%>
 <%@page import="java.util.List"%>
 <%@page import="com.studevs.mvc.models.GalleryImages"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%
     FeaturePage featurePage = (FeaturePage) request.getAttribute("featurePage");
     EncodedByteToString encodedByteToString = (EncodedByteToString) request.getAttribute("encodedByteToString");
     List<GalleryImages> galleryImageses = (List<GalleryImages>) request.getAttribute("galleryImageses");
     GalleryImages galleryImages = (GalleryImages) request.getAttribute("galleryImages");
     String imageView = (String) request.getAttribute("imageView");
-    Admin admin = (Admin) request.getSession().getAttribute("admin");
+//    Admin admin = (Admin) request.getSession().getAttribute("admin");
 %>
 <!DOCTYPE html>
 <html lang="en">

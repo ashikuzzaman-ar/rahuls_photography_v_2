@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns:b="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/security"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+    
+        
+        
+    <b:import resource="classpath:dbBean.xml"/>
+            
+    <http use-expressions="true">
+        <csrf disabled="true"/>
+      
+        <intercept-url pattern="/admin_panel" access="isAuthenticated()"/>
+        <intercept-url pattern="/team_members_remove" access="isAuthenticated()"/>
+        <intercept-url pattern="/team_members_add" access="isAuthenticated()"/>
+        <intercept-url pattern="/team_members" access="isAuthenticated()"/>
+        <intercept-url pattern="/packages_add" access="isAuthenticated()"/>
+        <intercept-url pattern="/packages_remove" access="isAuthenticated()"/>
+        <intercept-url pattern="/packages" access="isAuthenticated()"/>
+        <intercept-url pattern="/admin_panel_some_milestone_works_counter_update" access="isAuthenticated()"/>
+        <intercept-url pattern="/admin_panel_starting_gif_update" access="isAuthenticated()"/>
+        <intercept-url pattern="/admin_panel_contacts_background_update" access="isAuthenticated()"/>
+        <intercept-url pattern="/admin_panel_some_milestone_works_backgroud_update" access="isAuthenticated()"/>
+        <intercept-url pattern="/admin_panel_our_skills_background_update" access="isAuthenticated()"/>
+        <intercept-url pattern="/admin_panel_about_us_slides_update" access="isAuthenticated()"/>
+        <intercept-url pattern="/admin_panel_background_slide_update" access="isAuthenticated()"/>
+        <intercept-url pattern="/admin_panel_delete_photo" access="isAuthenticated()"/>
+        <intercept-url pattern="/admin_panel_upload_new_photos" access="isAuthenticated()"/>
+        
+        <!-- must have ROLE_user in database for this to work-->
+        <!--<intercept-url pattern="/index" access="hasRole('user')"/>-->
+        <form-login always-use-default-target="true"
+                    authentication-failure-url="/loginpage?error" login-page="/loginpage"
+                    password-parameter="password" username-parameter="username" 
+        />
+        <logout logout-success-url="/loginpage" />
+        
+    </http>
+
+    <authentication-manager>
+        <authentication-provider>
+            <jdbc-user-service
+                data-source-ref="dataSource"/>
+        </authentication-provider>
+    </authentication-manager>
+
+	
+
+</b:beans>

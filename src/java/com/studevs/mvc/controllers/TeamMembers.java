@@ -5,7 +5,6 @@
  */
 package com.studevs.mvc.controllers;
 
-import com.studevs.mvc.models.Admin;
 import com.studevs.mvc.models.FeaturePage;
 import com.studevs.mvc.models.OurTeam;
 import com.studevs.utils.providers.ServiceProvider;
@@ -30,7 +29,6 @@ import org.springframework.web.multipart.MultipartFile;
 @Controller
 public class TeamMembers implements ServiceProvider {
 
-    private Admin admin;
     private FeaturePage featurePage;
     private FeaturePageProvider featurePageProvider;
     private OurTeamProvider ourTeamProvider;
@@ -51,48 +49,28 @@ public class TeamMembers implements ServiceProvider {
     }
 
     @RequestMapping(value = "team_members")
-    protected String doGet1(Model model,
-            HttpServletRequest request,
-            HttpServletResponse response) {
+    protected String doGet1(Model model) {
 
         this.setFeaturePage(model);
 
         try {
 
-            this.admin = (Admin) request.getSession().getAttribute("admin");
+            return "team_members";
 
-            if (this.admin == null) {
-
-                return "admin_panel";
-            } else {
-
-                return "team_members";
-            }
         } catch (Exception e) {
 
-            request.getSession().setAttribute("admin", null);
             return "admin_panel";
         }
     }
 
     @RequestMapping(value = "team_members_add", method = RequestMethod.GET)
-    protected String doGet2(Model model,
-            HttpServletRequest request,
-            HttpServletResponse response) {
+    protected String doGet2(Model model) {
 
         this.setFeaturePage(model);
 
         try {
 
-            this.admin = (Admin) request.getSession().getAttribute("admin");
-
-            if (this.admin == null) {
-
-                return "admin_panel";
-            } else {
-
-                return "team_members";
-            }
+            return "team_members";
 
         } catch (Exception e) {
 
@@ -109,15 +87,7 @@ public class TeamMembers implements ServiceProvider {
 
         try {
 
-            this.admin = (Admin) request.getSession().getAttribute("admin");
-
-            if (this.admin == null) {
-
-                return "admin_panel";
-            } else {
-
-                return "team_members";
-            }
+            return "team_members";
 
         } catch (Exception e) {
 
@@ -134,29 +104,21 @@ public class TeamMembers implements ServiceProvider {
             BindingResult bindingResult) {
 
         this.setFeaturePage(model);
-        
+
         try {
 
-            this.admin = (Admin) request.getSession().getAttribute("admin");
+            if (profilePicture != null) {
 
-            if (this.admin == null) {
-                
-                return "admin_panel";
-            } else {
-                
-                if (profilePicture != null) {
-
-                    ourTeam.setProfilePicture(profilePicture.getBytes());
-                }
-
-                ourTeam.setFeaturePage(this.featurePage);
-
-                this.featurePage.getOurTeamMembers().add(ourTeam);
-
-                this.featurePageProvider.updateFeaturePage(this.featurePage);
-
-                return "team_members";
+                ourTeam.setProfilePicture(profilePicture.getBytes());
             }
+
+            ourTeam.setFeaturePage(this.featurePage);
+
+            this.featurePage.getOurTeamMembers().add(ourTeam);
+
+            this.featurePageProvider.updateFeaturePage(this.featurePage);
+
+            return "team_members";
 
         } catch (Exception e) {
 
@@ -166,29 +128,20 @@ public class TeamMembers implements ServiceProvider {
 
     @RequestMapping(value = "team_members_remove", method = RequestMethod.POST)
     protected String doPost2(Model model,
-            HttpServletRequest request,
-            HttpServletResponse response,
             @RequestParam(value = "member_id", defaultValue = "") String memberId) {
 
         this.setFeaturePage(model);
-        
+
         try {
 
-            this.admin = (Admin) request.getSession().getAttribute("admin");
             this.ourTeamProvider = (OurTeamProvider) beanProvider.getBean("ourTeamProvider");
 
-            if (this.admin == null) {
-                
-                return "admin_panel";
-            } else {
-                
-                OurTeam ourTeam = new OurTeam();
-                ourTeam.setId(Integer.parseInt(memberId));
+            OurTeam ourTeam = new OurTeam();
+            ourTeam.setId(Integer.parseInt(memberId));
 
-                this.ourTeamProvider.removeOurTeam(ourTeam);
+            this.ourTeamProvider.removeOurTeam(ourTeam);
 
-                return "team_members";
-            }
+            return "team_members";
 
         } catch (Exception e) {
 
