@@ -121,6 +121,7 @@ public class PackageBooking implements ServiceProvider {
 
             if (ordersProvider.insertOrders(orders)) {
 
+//                Client Part 
                 String mailSubject = "Rahul's Photography | Form Submission Successful!";
                 String emailMessage = "Dear " + orders.getClientName() + ", \n"
                         + "Congratulation!!!!!!!\n"
@@ -148,6 +149,29 @@ public class PackageBooking implements ServiceProvider {
 
                 SendMail sendMail = (SendMail) beanProvider.getBean("sendMail");
                 sendMail.send(orders.getClientEmail(), mailSubject, emailMessage);
+
+//                Rahul's Part
+                mailSubject = "New order | Order ID - " + orders.getId();
+                emailMessage = "Dear Rahul, \n"
+                        + "A new ordre is submitted. Provided information is given below. "
+                        + "Please check the information and go to your website's controll panel to "
+                        + "approve the order."
+                        + "\n\n\n"
+                        + "Provided information which is recorded: \n"
+                        + "Order ID: " + orders.getId() + "\n"
+                        + "Name: " + orders.getClientName() + "\n"
+                        + "Phone Number: " + orders.getClientPhoneNumber() + "\n"
+                        + "Advanced Amount: " + orders.getAdvancedAmount() + "\n"
+                        + "BKash Number: " + orders.getClientBkshNumber() + "\n"
+                        + "BKash Transaction Number: " + orders.getTransactionNumber() + "\n"
+                        + "Email Address: " + orders.getClientEmail() + "\n"
+                        + "Email Address: " + orders.getClientEmail() + "\n"
+                        + "Event Date: " + orders.getEventDate() + "\n"
+                        + "Event Venue: " + orders.getEventVenue() + "\n"
+                        + "\n"
+                        + "Thank you for using our service!";
+
+                sendMail.send("info@rahulahasanphotography.com", mailSubject, emailMessage);
             }
 
             return "index";
