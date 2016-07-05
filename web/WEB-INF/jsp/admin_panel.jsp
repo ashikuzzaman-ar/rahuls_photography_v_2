@@ -11,6 +11,7 @@
                     <br/>
                     <p>Username: <%= admin.getUsername()%></p>
                     <a class="btn btn-lg btn-danger" href="admin_panel_logged_out">Log Out</a>
+                    <a class="btn btn-lg btn-blue" href="orders">View Orders</a>
                     <p>As admin power you can change each content of your site. Insert, Edit or Delete whatever you want!</p>
                 </div>
             </div>

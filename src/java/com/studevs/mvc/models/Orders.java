@@ -19,51 +19,51 @@ import javax.persistence.Temporal;
  */
 @Entity
 @Table(name = "ORDERS")
-public class Orders implements Serializable{
-    
+public class Orders implements Serializable {
+
     @Id
     @GeneratedValue
     @Column(name = "ID")
-    private Long id ;
-    
+    private Long id;
+
     @Column(name = "CLIENT_NAME", nullable = false)
-    private String clientName ;
-    
+    private String clientName;
+
     @Column(name = "CLIENT_PHONE_NUMBER", nullable = false)
-    private String clientPhoneNumber ;
-    
+    private String clientPhoneNumber;
+
     @Column(name = "CLIENT_EMAIL", nullable = false)
-    private String clientEmail ;
-    
+    private String clientEmail;
+
     @Column(name = "CLIENT_BKASH_NUMBER", nullable = false)
-    private String clientBkshNumber ;
-    
+    private String clientBkshNumber;
+
     @Column(name = "TRANSACTION_NUMBER", nullable = false)
-    private String transactionNumber ;
-    
+    private String transactionNumber;
+
     @Column(name = "ADVANCED_AMOUNT", nullable = false)
-    private Integer advancedAmount ;
-    
+    private Integer advancedAmount;
+
     @Column(name = "EVENT_VENUE", nullable = false, length = 500)
-    private String eventVenue ;
-    
+    private String eventVenue;
+
     @Column(name = "EVENT_DATE", nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date eventDate;
-    
+
     @Column(name = "DELIVERY_DATE")
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date deliveryDate ;
-    
+    private Date deliveryDate;
+
     @Column(name = "IS_FULL_PAID")
-    private Boolean isFullPaid ;
-    
+    private Boolean isFullPaid;
+
     @Column(name = "IS_APPOINTED")
-    private Boolean isAppointed ;
-    
+    private Boolean isAppointed;
+
     @Column(name = "IS_DELIVERED")
-    private Boolean isdelivered ;
-    
+    private Boolean isdelivered;
+
     @ManyToOne(targetEntity = OurPackages.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private OurPackages ourPackages;
 
@@ -254,5 +254,9 @@ public class Orders implements Serializable{
     }
 
     public Orders() {
+
+        this.isAppointed = false;
+        this.isFullPaid = false;
+        this.isdelivered = false;
     }
 }

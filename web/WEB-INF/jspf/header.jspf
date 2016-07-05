@@ -1,3 +1,4 @@
+<%@page import="com.studevs.mvc.models.Orders"%>
 <%@page import="com.studevs.mvc.models.Admin"%>
 <%@page import="com.studevs.utils.EncodedByteToString"%>
 <%@page import="com.studevs.mvc.models.FeaturePage"%>
@@ -12,6 +13,8 @@
     GalleryImages galleryImages = (GalleryImages) request.getAttribute("galleryImages");
     String imageView = (String) request.getAttribute("imageView");
     Admin admin = (Admin) request.getSession().getAttribute("admin");
+    List<Orders> currentOrderList = (List<Orders>) request.getAttribute("currentOrderList");
+    List<Orders> deliveredOrderList = (List<Orders>)request.getAttribute("deliveredOrderList");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -120,9 +123,9 @@
     </head>
     <body> 
         <!-- BEGAIN PRELOADER -->
-        <div id="preloader">
+<!--        <div id="preloader">
             <div id="status">&nbsp;</div>
-        </div>
+        </div>-->
         <!-- END PRELOADER -->
 
         <!-- SCROLL TOP BUTTON -->
