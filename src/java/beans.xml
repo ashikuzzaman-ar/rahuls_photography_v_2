@@ -21,29 +21,36 @@
     </bean>
     
     
-<!--    <bean class="org.springframework.mail.javamail.JavaMailSenderImpl" id="javaMailSender">
-        <property name="host">smtp.gmail.com</property>
-        <property name="port">587</property>
-        <property name="username">rahulahasanphotography.studevs@gmail.com</property>
-        <property name="password">studevsmaster420</property>
-        <property name="javaMailProperties">
-            <props>
-                <prop key="mail.transport.protocol">smtp</prop>
-                <prop key="mail.smtp.auth">true</prop>
-                <prop key="mail.smtp.starttls.enable">true</prop>
-            </props>
-        </property>
+    
+    
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">  
+        <property name="host" value="smtp.gmail.com" />  
+        <property name="username" value="rahulahasanphotography@gmail.com" />  
+        <property name="password" value="studevsmaster420" />  
+        <property name="javaMailProperties">  
+            <props>  
+                <prop key="mail.smtp.auth">true</prop>  
+                <prop key="mail.smtp.socketFactory.port">465</prop>  
+                <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>  
+                <prop key="mail.smtp.port">465</prop>  
+            </props>  
+        </property>  
     </bean>
     
     
-    <bean
-        class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
-        <property name="exceptionMappings">
-            <props>
-                <prop key="java.lang.Exception">Error</prop>
-            </props>
+    <bean id="simpleMailMessage" class="org.springframework.mail.SimpleMailMessage">
+        <property name="from">
+            <value>rahulahasanphotography@gmail.com</value>
         </property>
-    </bean>	-->
+    </bean>
+      
+          
+    <bean id="sendMail" class="com.studevs.utils.SendMail">  
+        <property name="mailSender" ref="mailSender" />  
+        <property name="simpleMailMessage" ref="simpleMailMessage" />  
+    </bean>
+    
+    
     
        
     <!--Service Beans-->

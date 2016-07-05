@@ -365,11 +365,11 @@
                         <!-- FOR CONTACT FORM MESSAGE -->
                         <div id="form-messages"></div>
 
-                        <form>
-                            <input class="form-control" type="text" placeholder="Name">
-                            <input class="form-control" type="email" placeholder="Email">
-                            <input class="form-control" type="text" placeholder="Subject">
-                            <textarea class="form-control" cols="30" rows="10" placeholder="Your Message"></textarea>
+                        <form action="send_email_message" method="POST">
+                            <input class="form-control" type="text" name="senderName" placeholder="Name">
+                            <input class="form-control" type="email" name="senderEmail" placeholder="Email">
+                            <input class="form-control" type="text" name="emailSubject" placeholder="Subject">
+                            <textarea class="form-control" cols="30" rows="10" name="emailMessage" placeholder="Your Message"></textarea>
                             <input class="submit_btn" type="submit" value="Send">  
                         </form>
                     </div>
