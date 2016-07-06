@@ -12,6 +12,8 @@
                     <p>Username: <%= admin.getUsername()%></p>
                     <a class="btn btn-lg btn-danger" href="admin_panel_logged_out">Log Out</a>
                     <a class="btn btn-lg btn-blue" href="orders">View Orders</a>
+                    <a class="btn btn-lg btn-green" href="http://www.rahulahasanphotography.com:2095/" target="_blank">Go To Mail</a>
+                    <a class="btn btn-lg btn-black" href="http://www.rahulahasanphotography.com:2082/" target="_blank">Go To CPanel</a>
                     <p>As admin power you can change each content of your site. Insert, Edit or Delete whatever you want!</p>
                 </div>
             </div>

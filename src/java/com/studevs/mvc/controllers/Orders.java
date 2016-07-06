@@ -120,7 +120,7 @@ public class Orders implements ServiceProvider {
         try {
 
             String subject = "Successfully submitted your order to Rahul's Photography!";
-            String mail = "Dear " + orders.getClientName() + ", \n"
+            String mailMessage = "Dear " + orders.getClientName() + ", \n"
                     + "Your order is varified sucessfully and it is approved by "
                     + "our team. We are very happy to announce that we "
                     + "will cover your event! If you have any query "
@@ -141,7 +141,7 @@ public class Orders implements ServiceProvider {
                     + "Thank You Very Much\n";
 
             SendMail sendMail = (SendMail) beanProvider.getBean("sendMail");
-            sendMail.send(orders.getClientEmail(), subject, mail);
+            sendMail.send(orders.getClientEmail(), subject, mailMessage);
         } catch (Exception e) {
 
             throw new ExceptionInInitializerError(e);
